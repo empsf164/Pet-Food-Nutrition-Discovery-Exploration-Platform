@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About PAWFORM — Mission, Philosophy & Creator Standards | PAWFORM</title>
+  <meta name="description" content="Learn about PAWFORM's mission to bring transparent pet nutrition education to every companion owner without marketing bias.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  
+  <!-- Custom Design Tokens & Master Styles -->
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- Sticky Editorial Navbar -->
+  <nav class="paw-navbar navbar navbar-expand-lg">
+    <div class="container">
+      <!-- Brand Logo (No Icon, Identical Style & Color to Footer) -->
+      <a class="navbar-brand navbar-brand-logo" href="index.html">PAWFORM</a>
+
+      <!-- Desktop Nav Items -->
+      <div class="collapse navbar-collapse d-none d-lg-flex" id="pawformDesktopNav">
+        <ul class="navbar-nav ms-auto align-items-center gap-1">
+          <li class="nav-item"><a class="nav-link-paw" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link-paw" href="videos.html">Videos</a></li>
+          <li class="nav-item"><a class="nav-link-paw" href="creators.html">Creators</a></li>
+          <li class="nav-item"><a class="nav-link-paw" href="guides.html">Guides</a></li>
+          <li class="nav-item"><a class="nav-link-paw active" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link-paw" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="d-flex align-items-center ms-3">
+          <a href="saved.html" class="btn-paw-icon-nav position-relative" aria-label="Saved Collections" title="Saved Collections">
+            <i class="bi bi-bookmark"></i>
+          </a>
+          <a href="signup.html" class="btn-paw-primary btn-sm ms-2 px-3 py-2 text-decoration-none">Sign Up</a>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Actions -->
+      <div class="d-flex align-items-center d-lg-none ms-auto">
+        <button class="navbar-toggler-paw" id="pawformMobileToggle" aria-label="Open menu">
+          <i class="bi bi-list"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Offcanvas Drawer -->
+  <div class="paw-drawer-backdrop" id="pawformDrawerBackdrop"></div>
+  <aside class="paw-mobile-drawer" id="pawformMobileDrawer" aria-label="Mobile navigation">
+    <div class="d-flex justify-content-between align-items-center mb-4 pb-3 border-bottom">
+      <a class="navbar-brand-logo" href="index.html">PAWFORM</a>
+      <button class="btn-close" id="pawformCloseDrawer" aria-label="Close menu"></button>
+    </div>
+    <nav class="d-flex flex-column mb-4">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="videos.html" class="mobile-nav-link">Videos</a>
+      <a href="creators.html" class="mobile-nav-link">Creators</a>
+      <a href="guides.html" class="mobile-nav-link">Guides</a>
+      <a href="about.html" class="mobile-nav-link active">About</a>
+      <a href="contact.html" class="mobile-nav-link">Contact</a>
+      <a href="saved.html" class="mobile-nav-link"><i class="bi bi-bookmark me-2"></i>Saved Library</a>
+    </nav>
+    <div class="pt-3 border-top">
+      <a href="signup.html" class="btn-paw-primary w-100 text-center py-2 text-decoration-none">Sign Up Free</a>
+    </div>
+  </aside>
+
+  <!-- ABOUT HERO -->
+  <header class="py-5 border-bottom" style="background-color: var(--bg-primary);">
+    <div class="container text-center max-w-800 mx-auto">
+      <span class="sub-heading-pill mb-3">Our Mission & Standards</span>
+      <h1 class="font-serif display-5 mb-3">“Discover Better Nutrition for Every Paw.”</h1>
+      <p class="text-editorial-lead text-secondary mb-0">
+        PAWFORM was founded with a singular purpose: to replace pet-food marketing confusion with transparent scientific education, culinary integrity, and independent creator perspectives.
+      </p>
+    </div>
+  </header>
+
+  <!-- PHILOSOPHY PILLARS -->
+  <main class="section-padding">
+    <div class="container">
+      <div class="row g-5 align-items-center mb-5">
+        <div class="col-lg-6">
+          <span class="sub-heading-pill">Transparent Discovery</span>
+          <h2 class="mb-3">Why We Are Different From Pet Stores</h2>
+          <p class="text-secondary mb-3">
+            PAWFORM is an <strong>independent content discovery platform</strong>, not an e-commerce retailer. We do not sell pet food, take kickbacks from industrial manufacturers, or promote products based on sponsored profit margins.
+          </p>
+          <p class="text-secondary mb-4">
+            Our goal is to give pet parents the scientific literacy required to read guaranteed analysis panels, calculate dry matter protein, understand ingredient splitting, and explore fresh feeding wisdom.
+          </p>
+          <div class="d-flex gap-3">
+            <a href="videos.html" class="btn-paw-primary">Watch Video Feed</a>
+            <a href="guides.html" class="btn-paw-secondary">Read Guides</a>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="rounded-3 overflow-hidden shadow-md border">
+            <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1000&q=80" class="w-100 object-fit-cover" style="height: 360px;" alt="Healthy active dogs in nature">
+          </div>
+        </div>
+      </div>
+
+      <!-- Creator Standards Grid -->
+      <div class="mt-5 pt-4 border-top">
+        <div class="text-center max-w-700 mx-auto mb-5">
+          <span class="sub-heading-pill">Quality Control</span>
+          <h2 class="mb-2">Our Creator Standards & Ethics</h2>
+          <p class="text-secondary">Every expert featured on PAWFORM undergoes peer review based on four core pillars.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3">
+            <div class="paw-card p-4 text-center h-100">
+              <div class="brand-mark mx-auto mb-3" style="width: 48px; height: 48px; font-size: 1.3rem; background: var(--color-forest-subtle); color: var(--color-forest);"><i class="bi bi-journal-medical"></i></div>
+              <h5 class="font-serif mb-2">Scientific Rigor</h5>
+              <p class="small text-secondary mb-0">Grounding all guidance in published veterinary biochemical literature and AAFCO/NRC nutrient minimums.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="paw-card p-4 text-center h-100">
+              <div class="brand-mark mx-auto mb-3" style="width: 48px; height: 48px; font-size: 1.3rem; background: var(--color-forest-subtle); color: var(--color-forest);"><i class="bi bi-shield-check"></i></div>
+              <h5 class="font-serif mb-2">No Diagnostic Claims</h5>
+              <p class="small text-secondary mb-0">We strictly avoid unproven medical or diagnostic claims. Nutrition supports general wellness, never replaces clinical care.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="paw-card p-4 text-center h-100">
+              <div class="brand-mark mx-auto mb-3" style="width: 48px; height: 48px; font-size: 1.3rem; background: var(--color-forest-subtle); color: var(--color-forest);"><i class="bi bi-search"></i></div>
+              <h5 class="font-serif mb-2">Ingredient Transparency</h5>
+              <p class="small text-secondary mb-0">Demystifying byproducts, fractionated starches, render meals, and synthetic preservatives clearly.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="paw-card p-4 text-center h-100">
+              <div class="brand-mark mx-auto mb-3" style="width: 48px; height: 48px; font-size: 1.3rem; background: var(--color-forest-subtle); color: var(--color-forest);"><i class="bi bi-heart-pulse"></i></div>
+              <h5 class="font-serif mb-2">Species-Appropriate</h5>
+              <p class="small text-secondary mb-0">Respecting the distinct evolutionary physiology of obligate carnivore felines and omnivore-carnivore canines.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- NEW SECTION: 5-STEP SCIENTIFIC EVALUATION METHODOLOGY -->
+  <section class="section-padding border-top" style="background-color: #FFFFFF;">
+    <div class="container">
+      <div class="section-header-editorial text-center max-w-750 mx-auto mb-5">
+        <span class="sub-heading-pill">Editorial Integrity</span>
+        <h2 class="mb-3">Our 5-Stage Nutrition Verification Framework</h2>
+        <p class="text-secondary">How our editorial team and clinical veterinary council rigorously evaluate food topics, ingredient claims, and creator masterclasses before publication.</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Step 1 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="paw-card p-4 h-100 position-relative">
+            <span class="badge bg-forest text-white rounded-pill px-3 py-1 mb-3" style="width: fit-content;">Stage 01</span>
+            <h5 class="font-serif mb-2">Biochemical Literature Check</h5>
+            <p class="small text-secondary mb-0">Every claim is cross-referenced against peer-reviewed nutritional studies from the Journal of Animal Science, Veterinary Clinical Pathology, and NRC guidelines.</p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="paw-card p-4 h-100 position-relative">
+            <span class="badge bg-terracotta text-white rounded-pill px-3 py-1 mb-3" style="width: fit-content;">Stage 02</span>
+            <h5 class="font-serif mb-2">Dry Matter & Amino Acid Calculus</h5>
+            <p class="small text-secondary mb-0">We calculate protein bioavailability on a 100% moisture-free dry matter basis, uncovering actual amino acid density vs raw ingredient water weight.</p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="paw-card p-4 h-100 position-relative">
+            <span class="badge bg-forest text-white rounded-pill px-3 py-1 mb-3" style="width: fit-content;">Stage 03</span>
+            <h5 class="font-serif mb-2">Zero Commercial Bias Firewall</h5>
+            <p class="small text-secondary mb-0">Our editors hold zero stock or consulting contracts with corporate pet food brands. Content cannot be influenced by paid sponsorships.</p>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="col-lg-6 col-md-6">
+          <div class="paw-card p-4 h-100 position-relative">
+            <span class="badge bg-forest text-white rounded-pill px-3 py-1 mb-3" style="width: fit-content;">Stage 04</span>
+            <h5 class="font-serif mb-2">Life-Stage & Species Validation</h5>
+            <p class="small text-secondary mb-0">Formulas are categorized strictly by life stage: puppy skeletal growth calcium windows, adult maintenance, and geriatric metabolic MCT pathways.</p>
+          </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="col-lg-6 col-md-12">
+          <div class="paw-card p-4 h-100 position-relative">
+            <span class="badge bg-terracotta text-white rounded-pill px-3 py-1 mb-3" style="width: fit-content;">Stage 05</span>
+            <h5 class="font-serif mb-2">Veterinary Council Peer Review</h5>
+            <p class="small text-secondary mb-0">Before any masterclass goes live, certified DVMs review the visual and textual points to ensure pet safety and adherence to clinical guidelines.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VETERINARY DISCLAIMER BANNER -->
+  <aside class="container">
+    <div class="paw-disclaimer-box my-4 p-4 border-2 border-forest">
+      <i class="bi bi-exclamation-octagon-fill fs-2 text-forest"></i>
+      <div>
+        <h6 class="text-dark font-serif mb-1">Health & Nutrition Position Statement</h6>
+        <p class="small text-secondary mb-0">
+          PAWFORM provides educational information and is not a substitute for veterinary medical advice. Content published on this platform is for educational, exploratory, and general wellness purposes only. Never disregard professional veterinary guidance or delay seeking care because of something you have read or watched on PAWFORM.
+        </p>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MASTER FOOTER -->
+  <footer class="paw-footer">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <div class="col-lg-5">
+          <a class="footer-logo mb-3" href="index.html">PAWFORM</a>
+          <p class="small text-secondary mb-4 pe-lg-4">
+            Discover Better Nutrition for Every Paw. Curated editorial guides, veterinary video masterclasses, and verified ingredient breakdowns.
+          </p>
+          <div class="d-flex gap-2">
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="btn-paw-icon-nav" style="width: 36px; height: 36px; font-size: 1rem;" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener" class="btn-paw-icon-nav" style="width: 36px; height: 36px; font-size: 1rem;" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="https://x.com" target="_blank" rel="noopener" class="btn-paw-icon-nav" style="width: 36px; height: 36px; font-size: 1rem;" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener" class="btn-paw-icon-nav" style="width: 36px; height: 36px; font-size: 1rem;" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-3">
+          <div class="footer-title">Platform</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="videos.html">Videos</a></li>
+            <li><a href="creators.html">Creators</a></li>
+            <li><a href="guides.html">Guides</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="saved.html">Saved Library</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-4">
+          <div class="footer-title">Popular Topics</div>
+          <ul class="footer-links">
+            <li><a href="guides.html">Protein Bioavailability</a></li>
+            <li><a href="guides.html">Pet Food Label Decoder</a></li>
+            <li><a href="guides.html">Feline Hydration & Renal Care</a></li>
+            <li><a href="videos.html">Raw & Fresh Formulation</a></li>
+            <li><a href="videos.html">Puppy Growth Macros</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-4 border-top d-flex justify-content-between align-items-center flex-wrap gap-3 small text-muted">
+        <div>&copy; 2026 PAWFORM Platform. All rights reserved. Discover Better Nutrition for Every Paw.</div>
+        <div class="d-flex gap-3">
+          <a href="about.html" class="text-secondary text-decoration-none">Editorial Standards</a>
+          <a href="about.html" class="text-secondary text-decoration-none">Privacy Policy</a>
+          <a href="contact.html" class="text-secondary text-decoration-none">Contact Support</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/bookmarks.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+

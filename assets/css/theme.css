@@ -1,0 +1,100 @@
+/* ==========================================================================
+   PAWFORM - Theme System & Design Tokens
+   Warm Clean Editorial Palette (No grey backgrounds)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* Clean Warm Editorial Palette */
+  --bg-primary: #FAF8F5;
+  --bg-secondary: #FAF8F5;
+  --bg-surface: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --bg-elevated: #FFFFFF;
+  --bg-subtle: #F3EFEA;
+  --bg-backdrop: rgba(26, 54, 40, 0.4);
+
+  /* Editorial Earth & Forest Accents */
+  --color-forest: #1A3628;
+  --color-forest-dark: #12251B;
+  --color-forest-light: #2A5641;
+  --color-forest-subtle: #EDF3EF;
+  
+  --color-sage: #6B8071;
+  --color-sage-light: #E2EAE4;
+  --color-sage-dark: #4F6355;
+
+  --color-terracotta: #C85D3D;
+  --color-terracotta-dark: #A7482B;
+  --color-terracotta-light: #FBEFEA;
+
+  --color-gold: #D6973D;
+  --color-gold-light: #FAF2E6;
+
+  /* Clean Typography Colors */
+  --text-primary: #1F2623;
+  --text-secondary: #4A5750;
+  --text-muted: #7E8C84;
+  --text-link: #1A3628;
+  --text-link-hover: #C85D3D;
+
+  /* Borders & Dividers */
+  --border-color: #E8E2D8;
+  --border-light: #EFEAE2;
+  --border-medium: #DDD6CA;
+  --border-dark: #2A3B31;
+
+  /* Shadows */
+  --shadow-xs: 0 1px 3px rgba(26, 54, 40, 0.04);
+  --shadow-sm: 0 4px 12px rgba(26, 54, 40, 0.05);
+  --shadow-md: 0 8px 24px rgba(26, 54, 40, 0.07);
+  --shadow-lg: 0 16px 40px rgba(26, 54, 40, 0.1);
+
+  /* Border Radii */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+
+  /* Fonts */
+  --font-serif: 'DM Serif Display', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Transitions */
+  --transition-fast: 0.18s ease;
+  --transition-normal: 0.28s cubic-bezier(0.2, 0, 0, 1);
+
+  --nav-height: 80px;
+}
+
+/* Color & Surface Utilities */
+.text-forest { color: var(--color-forest) !important; }
+.text-forest-dark { color: var(--color-forest-dark) !important; }
+.text-forest-light { color: var(--color-forest-light) !important; }
+.text-terracotta { color: var(--color-terracotta) !important; }
+.text-sage { color: var(--color-sage) !important; }
+.text-primary-dark { color: var(--text-primary) !important; }
+.text-secondary-muted { color: var(--text-secondary) !important; }
+
+.bg-surface { background-color: var(--bg-surface) !important; }
+.bg-forest { background-color: var(--color-forest) !important; color: #FFFFFF !important; }
+.bg-forest-subtle { background-color: var(--color-forest-subtle) !important; color: var(--color-forest) !important; }
+.bg-terracotta { background-color: var(--color-terracotta) !important; color: #FFFFFF !important; }
+.bg-terracotta-light { background-color: var(--color-terracotta-light) !important; color: var(--color-terracotta-dark) !important; }
+.bg-sage-light { background-color: var(--color-sage-light) !important; color: var(--color-forest-dark) !important; }
+
+/* Ensure badges always have high contrast */
+.badge.bg-surface {
+  color: var(--color-forest) !important;
+  background-color: #FFFFFF !important;
+  border-color: var(--border-color) !important;
+}
+.badge.bg-surface.text-dark {
+  color: var(--text-primary) !important;
+}
+.badge.bg-surface.text-forest {
+  color: var(--color-forest) !important;
+}

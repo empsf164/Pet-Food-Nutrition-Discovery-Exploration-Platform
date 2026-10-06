@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creator Directory & Veterinary Specialists — PAWFORM</title>
+  <meta name="description" content="Discover verified veterinary nutritionists, canine clinical dietitians, fresh food formulators, and pet food watchdogs.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  
+  <!-- Custom Design Tokens & Master Styles -->
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- Sticky Editorial Navbar -->
+  <nav class="paw-navbar navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand navbar-brand-logo" href="index.html">PAWFORM</a>
+
+      <div class="collapse navbar-collapse d-none d-lg-flex" id="pawformDesktopNav">
+        <ul class="navbar-nav ms-auto align-items-center gap-1">
+          <li class="nav-item"><a class="nav-link-paw" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link-paw" href="videos.html">Videos</a></li>
+          <li class="nav-item"><a class="nav-link-paw active" href="creators.html">Creators</a></li>
+          <li class="nav-item"><a class="nav-link-paw" href="guides.html">Guides</a></li>
+          <li class="nav-item"><a class="nav-link-paw" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link-paw" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="d-flex align-items-center ms-3">
+          <a href="saved.html" class="btn-paw-icon-nav position-relative" aria-label="Saved Collections" title="Saved Collections">
+            <i class="bi bi-bookmark"></i>
+          </a>
+          <a href="signup.html" class="btn-paw-primary btn-sm ms-2 px-3 py-2 text-decoration-none">Sign Up</a>
+        </div>
+      </div>
+
+      <div class="d-flex align-items-center d-lg-none ms-auto">
+        <button class="navbar-toggler-paw" id="pawformMobileToggle" aria-label="Open menu">
+          <i class="bi bi-list"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Offcanvas Drawer -->
+  <div class="paw-drawer-backdrop" id="pawformDrawerBackdrop"></div>
+  <aside class="paw-mobile-drawer" id="pawformMobileDrawer" aria-label="Mobile navigation">
+    <div class="d-flex justify-content-between align-items-center mb-4 pb-3 border-bottom">
+      <a class="navbar-brand-logo" href="index.html">PAWFORM</a>
+      <button class="btn-close" id="pawformCloseDrawer" aria-label="Close menu"></button>
+    </div>
+    <nav class="d-flex flex-column mb-4">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="videos.html" class="mobile-nav-link">Videos</a>
+      <a href="creators.html" class="mobile-nav-link active">Creators</a>
+      <a href="guides.html" class="mobile-nav-link">Guides</a>
+      <a href="about.html" class="mobile-nav-link">About</a>
+      <a href="contact.html" class="mobile-nav-link">Contact</a>
+      <a href="saved.html" class="mobile-nav-link"><i class="bi bi-bookmark me-2"></i>Saved Library</a>
+    </nav>
+    <div class="pt-3 border-top">
+      <a href="signup.html" class="btn-paw-primary w-100 text-center py-2 text-decoration-none">Sign Up Free</a>
+    </div>
+  </aside>
+
+  <!-- CREATORS HEADER -->
+  <header class="py-5 border-bottom" style="background-color: var(--bg-primary);">
+    <div class="container">
+      <div class="row align-items-center justify-content-between g-4">
+        <div class="col-lg-7">
+          <span class="sub-heading-pill">Specialist Network</span>
+          <h1 class="mb-2">Pet Nutrition Creators & Educators</h1>
+          <p class="text-secondary mb-0">Follow verified board-certified veterinary nutritionists, pet food kitchen chefs, and evidence-based researchers.</p>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="input-group shadow-sm bg-surface rounded-pill p-1 border">
+            <span class="input-group-text bg-transparent border-0 ps-3"><i class="bi bi-search text-muted"></i></span>
+            <input type="text" class="form-control bg-transparent border-0" id="creatorSearchInput" placeholder="Search by name, specialty, or topic...">
+          </div>
+        </div>
+      </div>
+
+      <!-- Specialty Category Filter Pills -->
+      <div class="d-flex flex-wrap gap-2 mt-4 pt-2 border-top">
+        <button class="btn btn-sm btn-outline-secondary rounded-pill active creator-cat-btn" data-cat="all">All Specialists</button>
+        <button class="btn btn-sm btn-outline-secondary rounded-pill creator-cat-btn" data-cat="veterinarians">Veterinarians & PhDs</button>
+        <button class="btn btn-sm btn-outline-secondary rounded-pill creator-cat-btn" data-cat="chefs">Fresh Pet Chefs</button>
+        <button class="btn btn-sm btn-outline-secondary rounded-pill creator-cat-btn" data-cat="reviewers">Label Analysts</button>
+        <button class="btn btn-sm btn-outline-secondary rounded-pill creator-cat-btn" data-cat="educators">Development & Raw Coaches</button>
+        <button class="btn btn-sm btn-outline-secondary rounded-pill creator-cat-btn" data-cat="wellness">Holistic & Herbs</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- CREATORS GRID -->
+  <main class="section-padding">
+    <div class="container">
+      <div class="row g-4" id="creatorsGridContainer">
+        <!-- Rendered via creators.js -->
+      </div>
+    </div>
+  </main>
+
+  <!-- NEW SECTION: CREATOR FELLOWSHIP & VERIFICATION STANDARDS -->
+  <section class="section-padding border-top" style="background-color: #FFFFFF;">
+    <div class="container">
+      <div class="paw-card p-4 p-md-5 bg-surface border shadow-sm">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-7">
+            <span class="sub-heading-pill mb-2">Publish on PAWFORM</span>
+            <h2 class="font-serif mb-3">Are You a Veterinary Nutritionist or Pet Food Educator?</h2>
+            <p class="text-secondary mb-3">
+              Join the PAWFORM Creator Fellowship to distribute your video masterclasses and research guides to a highly engaged audience of pet parents seeking unbiased science.
+            </p>
+            <div class="row g-3 mb-4">
+              <div class="col-sm-6">
+                <div class="d-flex align-items-start gap-2">
+                  <i class="bi bi-check-circle-fill text-forest fs-5"></i>
+                  <div class="small"><strong>Zero Sponsor Mandates:</strong> Retain 100% editorial freedom without corporate brand pressure.</div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="d-flex align-items-start gap-2">
+                  <i class="bi bi-check-circle-fill text-forest fs-5"></i>
+                  <div class="small"><strong>Verified Badge:</strong> Earn the trusted DVM/PhD peer-reviewed creator seal.</div>
+                </div>
+              </div>
+            </div>
+            <a href="contact.html" class="btn-paw-primary px-4 py-2 text-decoration-none">
+              <span>Apply for Creator Fellowship</span>
+              <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="p-4 rounded-3 border bg-primary" style="background-color: var(--bg-primary);">
+              <h6 class="font-serif mb-3"><i class="bi bi-award me-2 text-terracotta"></i>Vetting Requirements</h6>
+              <ul class="list-unstyled small text-secondary d-flex flex-column gap-2 mb-0">
+                <li class="d-flex align-items-center gap-2"><i class="bi bi-dot fs-4 text-forest"></i> Board certification, DVM, MS, or PhD in Animal Science.</li>
+                <li class="d-flex align-items-center gap-2"><i class="bi bi-dot fs-4 text-forest"></i> Demonstrated commitment to evidence-based education.</li>
+                <li class="d-flex align-items-center gap-2"><i class="bi bi-dot fs-4 text-forest"></i> Clear disclosure of any commercial affiliations.</li>
+                <li class="d-flex align-items-center gap-2"><i class="bi bi-dot fs-4 text-forest"></i> Adherence to non-diagnostic educational guidelines.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DISCLAIMER -->
+  <aside class="container">
+    <div class="paw-disclaimer-box my-4">
+      <i class="bi bi-info-circle-fill"></i>
+      <div>
+        <strong class="text-dark">Educational Disclaimer:</strong>
+        PAWFORM provides educational information and is not a substitute for veterinary advice.
+      </div>
+    </div>
+  </aside>
+
+  <!-- MASTER FOOTER -->
+  <footer class="paw-footer">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <div class="col-lg-5">
+          <a class="footer-logo mb-3" href="index.html">PAWFORM</a>
+          <p class="small text-secondary mb-4 pe-lg-4">
+            Discover Better Nutrition for Every Paw. Curated editorial guides, veterinary video masterclasses, and verified ingredient breakdowns.
+          </p>
+          <div class="d-flex gap-2">
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="btn-paw-icon-nav" style="width: 36px; height: 36px; font-size: 1rem;" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener" class="btn-paw-icon-nav" style="width: 36px; height: 36px; font-size: 1rem;" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="https://x.com" target="_blank" rel="noopener" class="btn-paw-icon-nav" style="width: 36px; height: 36px; font-size: 1rem;" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener" class="btn-paw-icon-nav" style="width: 36px; height: 36px; font-size: 1rem;" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-3">
+          <div class="footer-title">Platform</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="videos.html">Videos</a></li>
+            <li><a href="creators.html">Creators</a></li>
+            <li><a href="guides.html">Guides</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="saved.html">Saved Library</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-4">
+          <div class="footer-title">Popular Topics</div>
+          <ul class="footer-links">
+            <li><a href="guides.html">Protein Bioavailability</a></li>
+            <li><a href="guides.html">Pet Food Label Decoder</a></li>
+            <li><a href="guides.html">Feline Hydration & Renal Care</a></li>
+            <li><a href="videos.html">Raw & Fresh Formulation</a></li>
+            <li><a href="videos.html">Puppy Growth Macros</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-4 border-top d-flex justify-content-between align-items-center flex-wrap gap-3 small text-muted">
+        <div>&copy; 2026 PAWFORM Platform. All rights reserved. Discover Better Nutrition for Every Paw.</div>
+        <div class="d-flex gap-3">
+          <a href="about.html" class="text-secondary text-decoration-none">Editorial Standards</a>
+          <a href="about.html" class="text-secondary text-decoration-none">Privacy Policy</a>
+          <a href="contact.html" class="text-secondary text-decoration-none">Contact Support</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/bookmarks.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/creators.js"></script>
+</body>
+</html>

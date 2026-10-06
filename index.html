@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAWFORM — Discover What’s Really in Their Bowl | Pet Food Nutrition Discovery</title>
+  <meta name="description"
+    content="Discover pet food nutrition knowledge, watch trusted creator videos, decode ingredient labels, and explore evidence-based feeding guides.">
+  <meta name="keywords"
+    content="pet food nutrition, dog food ingredients, cat hydration, pet food labels, veterinary nutritionists, fresh pet food">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Custom Design Tokens & Master Styles -->
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+
+  <!-- Sticky Editorial Navbar -->
+  <nav class="paw-navbar navbar navbar-expand-lg">
+    <div class="container">
+      <!-- Brand Logo (No Icon, Identical Style & Color to Footer) -->
+      <a class="navbar-brand navbar-brand-logo" href="index.html">PAWFORM</a>
+
+      <!-- Desktop Nav Items -->
+      <div class="collapse navbar-collapse d-none d-lg-flex" id="pawformDesktopNav">
+        <ul class="navbar-nav ms-auto align-items-center gap-1">
+          <li class="nav-item"><a class="nav-link-paw active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link-paw" href="videos.html">Videos</a></li>
+          <li class="nav-item"><a class="nav-link-paw" href="creators.html">Creators</a></li>
+          <li class="nav-item"><a class="nav-link-paw" href="guides.html">Guides</a></li>
+          <li class="nav-item"><a class="nav-link-paw" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link-paw" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="d-flex align-items-center ms-3">
+          <a href="saved.html" class="btn-paw-icon-nav position-relative" aria-label="Saved Collections"
+            title="Saved Collections">
+            <i class="bi bi-bookmark"></i>
+          </a>
+          <a href="signup.html" class="btn-paw-primary btn-sm ms-2 px-3 py-2 text-decoration-none">Sign Up</a>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Actions -->
+      <div class="d-flex align-items-center d-lg-none ms-auto">
+        <button class="navbar-toggler-paw" id="pawformMobileToggle" aria-label="Open navigation menu">
+          <i class="bi bi-list"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Offcanvas Drawer -->
+  <div class="paw-drawer-backdrop" id="pawformDrawerBackdrop"></div>
+  <aside class="paw-mobile-drawer" id="pawformMobileDrawer" aria-label="Mobile menu">
+    <div class="d-flex justify-content-between align-items-center mb-4 pb-3 border-bottom">
+      <a class="navbar-brand-logo" href="index.html">PAWFORM</a>
+      <button class="btn-close" id="pawformCloseDrawer" aria-label="Close menu"></button>
+    </div>
+
+    <!-- Mobile Navigation Links -->
+    <nav class="d-flex flex-column mb-4">
+      <a href="index.html" class="mobile-nav-link active">Home</a>
+      <a href="videos.html" class="mobile-nav-link">Videos</a>
+      <a href="creators.html" class="mobile-nav-link">Creators</a>
+      <a href="guides.html" class="mobile-nav-link">Guides</a>
+      <a href="about.html" class="mobile-nav-link">About</a>
+      <a href="contact.html" class="mobile-nav-link">Contact</a>
+      <a href="saved.html" class="mobile-nav-link"><i class="bi bi-bookmark me-2"></i>Saved Library</a>
+    </nav>
+
+    <div class="pt-3 border-top">
+      <a href="signup.html" class="btn-paw-primary w-100 text-center py-2 text-decoration-none">Sign Up Free</a>
+    </div>
+  </aside>
+
+  <!-- HERO SECTION -->
+  <header class="hero-editorial">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-7">
+          <div class="sub-heading-pill">
+            Educational Pet Nutrition Platform
+          </div>
+          <h1 class="mb-4">
+            Discover What’s Really in <span class="hero-title-highlight">Their Bowl.</span>
+          </h1>
+          <p class="text-editorial-lead mb-4">
+            Explore pet-food nutrition science, discover trusted veterinary creators, watch practical video breakdowns,
+            and find better ways to understand what your pet eats.
+          </p>
+
+          <div class="d-flex flex-wrap gap-3 mb-4">
+            <a href="discover.html" class="btn-paw-primary">
+              <span>Start Exploring</span>
+              <i class="bi bi-arrow-right"></i>
+            </a>
+            <a href="videos.html" class="btn-paw-secondary">
+              <i class="bi bi-play-circle"></i>
+              <span>Watch Videos</span>
+            </a>
+          </div>
+
+          <!-- Quick Topic Pills -->
+          <div class="d-flex align-items-center flex-wrap gap-2 pt-2">
+            <span class="text-secondary small fw-bold">Popular Topics:</span>
+            <a href="discover.html?topic=Protein" class="hero-topic-pill">Protein Quality</a>
+            <a href="discover.html?topic=Food Labels" class="hero-topic-pill">Label Decoder</a>
+            <a href="discover.html?species=Cats" class="hero-topic-pill">Cat Hydration</a>
+            <a href="discover.html?topic=Senior Pets" class="hero-topic-pill">Senior Nutrition</a>
+          </div>
+        </div>
+
+        <!-- Hero Visual Showcase -->
+        <div class="col-lg-5">
+          <div class="hero-visual-cluster">
+            <img src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=1000&q=80"
+              alt="Golden Retriever with healthy food bowl" class="hero-main-img">
+
+            <!-- Floating Badge 1 -->
+            <div class="floating-nutrition-badge">
+              <div class="badge-icon"><i class="bi bi-patch-check-fill"></i></div>
+              <div>
+                <div class="fw-bold font-serif fs-6 mb-0 text-dark">100% Unbiased Science</div>
+                <div class="text-muted" style="font-size: 0.78rem;">Decoded by certified veterinary nutritionists</div>
+              </div>
+            </div>
+
+            <!-- Floating Badge 2 -->
+            <div class="floating-stat-badge d-none d-sm-block">
+              <div class="fw-bold fs-5">48+ Guides</div>
+              <div style="font-size: 0.75rem; opacity: 0.9;">12 Video Masterclasses</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- POPULAR TOPICS CHIP BAR -->
+  <section class="py-4 border-bottom" style="background-color: var(--bg-primary);">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+        <div class="fw-bold small text-uppercase text-muted">Explore by Topic:</div>
+        <div class="d-flex flex-wrap gap-2">
+          <a href="discover.html?species=Dogs" class="topic-chip">Dog Nutrition</a>
+          <a href="discover.html?species=Cats" class="topic-chip">Cat Nutrition</a>
+          <a href="discover.html?species=Puppies" class="topic-chip">Puppy Food</a>
+          <a href="discover.html?species=Senior Pets" class="topic-chip">Senior Pets</a>
+          <a href="discover.html?topic=Protein" class="topic-chip">Protein Sources</a>
+          <a href="discover.html?topic=Food Labels" class="topic-chip">Food Labels</a>
+          <a href="discover.html?topic=Hydration" class="topic-chip">Hydration</a>
+          <a href="discover.html?topic=Ingredients" class="topic-chip">Ingredients</a>
+          <a href="discover.html?topic=Supplements" class="topic-chip">Supplements</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRENDING DISCOVERIES GRID -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-end section-header-editorial flex-wrap gap-3">
+        <div>
+          <span class="sub-heading-pill">Weekly Trending</span>
+          <h2 class="mb-2">Trending Nutrition Discoveries</h2>
+          <p class="text-secondary mb-0">The most discussed ingredients, label decoders, and feeding perspectives this
+            week.</p>
+        </div>
+        <a href="discover.html" class="btn-paw-outline">
+          <span>View All Discoveries</span>
+          <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="row g-4">
+        <!-- Card 1: Video -->
+        <div class="col-md-6 col-lg-4">
+          <div class="paw-card video-card">
+            <div class="card-thumb-wrap">
+              <img src="https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=800&q=80"
+                alt="How to Read a Pet Food Label">
+              <span class="video-category-tag">Food Labels</span>
+              <span class="video-duration-badge">14:25</span>
+              <button class="btn-save-bookmark" data-type="videos" data-id="vid-1"
+                data-title="How to Read a Pet Food Label">
+                <i class="bi bi-bookmark"></i>
+              </button>
+              <a href="video-details.html?id=vid-1" class="card-play-overlay">
+                <div class="play-icon-circle"><i class="bi bi-play-fill"></i></div>
+              </a>
+            </div>
+            <div class="card-body">
+              <a href="video-details.html?id=vid-1" class="card-title">How to Read a Pet Food Label: Beyond Marketing
+                Buzzwords</a>
+              <div class="creator-snippet">
+                <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=300&q=80"
+                  alt="Dr. Maya Lin, MS, DVM">
+                <span class="creator-name">Dr. Maya Lin, MS, DVM</span>
+                <span class="video-views">184K views</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Video -->
+        <div class="col-md-6 col-lg-4">
+          <div class="paw-card video-card">
+            <div class="card-thumb-wrap">
+              <img src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=800&q=80"
+                alt="Protein Sources Explained">
+              <span class="video-category-tag">Protein</span>
+              <span class="video-duration-badge">18:10</span>
+              <button class="btn-save-bookmark" data-type="videos" data-id="vid-2"
+                data-title="Protein Sources Explained">
+                <i class="bi bi-bookmark"></i>
+              </button>
+              <a href="video-details.html?id=vid-2" class="card-play-overlay">
+                <div class="play-icon-circle"><i class="bi bi-play-fill"></i></div>
+              </a>
+            </div>
+            <div class="card-body">
+              <a href="video-details.html?id=vid-2" class="card-title">Protein Sources Explained: Bioavailability, Meal
+                vs Whole Meat</a>
+              <div class="creator-snippet">
+                <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=300&q=80"
+                  alt="Dr. Maya Lin, MS, DVM">
+                <span class="creator-name">Dr. Maya Lin, MS, DVM</span>
+                <span class="video-views">142K views</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Guide -->
+        <div class="col-md-6 col-lg-4">
+          <div class="paw-card guide-card">
+            <div class="guide-thumb-wrap">
+              <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=800&q=80"
+                alt="Feline Hydration Guide">
+              <span class="video-category-tag">Hydration</span>
+              <span class="guide-read-badge"><i class="bi bi-clock me-1"></i>8 min read</span>
+              <button class="btn-save-bookmark" data-type="guides" data-id="guide-3"
+                data-title="The Feline Hydration & Renal Guide">
+                <i class="bi bi-bookmark"></i>
+              </button>
+            </div>
+            <div class="card-body">
+              <a href="guide-details.html?id=guide-3" class="card-title">The Feline Hydration & Renal Guide:
+                Safeguarding Kidney Function</a>
+              <div class="creator-snippet">
+                <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=300&q=80"
+                  alt="Dr. Aris Thorne, DVM">
+                <span class="creator-name">Dr. Aris Thorne, DVM</span>
+                <a href="guide-details.html?id=guide-3" class="text-forest fw-semibold small ms-auto">Read Guide →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CINEMATIC FEATURED VIDEO SECTION -->
+  <section class="section-padding border-top border-bottom" style="background-color: #FFFFFF;">
+    <div class="container">
+      <div class="section-header-editorial text-center max-w-700 mx-auto mb-5">
+        <span class="sub-heading-pill">Cinematic Masterclasses</span>
+        <h2 class="mb-3">Featured Video Explorations</h2>
+        <p class="text-secondary">Watch real kitchen batch formulation, clinical feeding tests, and laboratory
+          ingredient evaluations.</p>
+      </div>
+
+      <div class="row g-4 align-items-center">
+        <!-- Big Hero Video Showcase -->
+        <div class="col-lg-8">
+          <div class="video-card paw-card shadow-md">
+            <div class="card-thumb-wrap" style="height: 340px;">
+              <img src="https://images.unsplash.com/photo-1541599540903-216a46ca1dc0?auto=format&fit=crop&w=1200&q=80"
+                alt="Inside a Fresh Pet Food Kitchen">
+              <span class="video-category-tag">Featured Masterclass</span>
+              <span class="video-duration-badge">16:40</span>
+              <button class="btn-save-bookmark" data-type="videos" data-id="vid-3"
+                data-title="Inside a Fresh Pet Food Kitchen">
+                <i class="bi bi-bookmark"></i>
+              </button>
+              <a href="video-details.html?id=vid-3" class="card-play-overlay" style="opacity: 0.9;">
+                <div class="play-icon-circle" style="width: 60px; height: 60px; font-size: 1.8rem;"><i
+                    class="bi bi-play-fill"></i></div>
+              </a>
+            </div>
+            <div class="card-body p-4">
+              <h3 class="font-serif mb-2"><a href="video-details.html?id=vid-3" class="text-dark">Inside a Fresh Pet
+                  Food Kitchen: Batch Prep & Safety Protocols</a></h3>
+              <p class="text-secondary mb-3">Chef Tyler walks through an inspected commercial fresh kitchen. Learn how
+                whole muscle cuts, organs, and cold-sensitive omegas are gently steamed at 165°F.</p>
+              <div class="creator-snippet pt-3">
+                <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=300&q=80"
+                  alt="Chef Tyler Brooks">
+                <div>
+                  <div class="fw-bold small text-dark">Chef Tyler Brooks</div>
+                  <div class="text-muted" style="font-size: 0.75rem;">Fresh Pet Culinary Specialist</div>
+                </div>
+                <a href="video-details.html?id=vid-3" class="btn-paw-primary btn-sm ms-auto px-3">Watch Video</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Supporting Side Videos -->
+        <div class="col-lg-4">
+          <div class="d-flex flex-column gap-3">
+            <!-- Side Video 1 -->
+            <div class="paw-card p-3">
+              <div class="d-flex gap-3">
+                <div class="position-relative rounded-2 overflow-hidden"
+                  style="width: 120px; height: 85px; flex-shrink: 0;">
+                  <img
+                    src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&w=400&q=80"
+                    class="w-100 h-100 object-fit-cover" alt="Senior Dog Nutrition">
+                  <a href="video-details.html?id=vid-6" class="card-play-overlay"><i
+                      class="bi bi-play-fill text-white fs-5"></i></a>
+                  <span class="video-duration-badge" style="font-size: 0.68rem; bottom: 4px; right: 4px;">17:45</span>
+                </div>
+                <div class="d-flex flex-column justify-content-between">
+                  <a href="video-details.html?id=vid-6"
+                    class="fw-semibold font-serif text-dark small line-clamp-2">Senior Dog Nutrition: MCT Oils & Joint
+                    Protection</a>
+                  <span class="text-muted" style="font-size: 0.72rem;">Dr. Kenji Sato • 93K views</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Side Video 2 -->
+            <div class="paw-card p-3">
+              <div class="d-flex gap-3">
+                <div class="position-relative rounded-2 overflow-hidden"
+                  style="width: 120px; height: 85px; flex-shrink: 0;">
+                  <img
+                    src="https://images.unsplash.com/photo-1591160690555-5debfba289f0?auto=format&fit=crop&w=400&q=80"
+                    class="w-100 h-100 object-fit-cover" alt="Puppy Calcium Ratios">
+                  <a href="video-details.html?id=vid-7" class="card-play-overlay"><i
+                      class="bi bi-play-fill text-white fs-5"></i></a>
+                  <span class="video-duration-badge" style="font-size: 0.68rem; bottom: 4px; right: 4px;">13:15</span>
+                </div>
+                <div class="d-flex flex-column justify-content-between">
+                  <a href="video-details.html?id=vid-7"
+                    class="fw-semibold font-serif text-dark small line-clamp-2">Puppy Calcium Ratios: Growth
+                    Calibration</a>
+                  <span class="text-muted" style="font-size: 0.72rem;">Sophia Alvarez • 108K views</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Side Video 3 -->
+            <div class="paw-card p-3">
+              <div class="d-flex gap-3">
+                <div class="position-relative rounded-2 overflow-hidden"
+                  style="width: 120px; height: 85px; flex-shrink: 0;">
+                  <img
+                    src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=400&q=80"
+                    class="w-100 h-100 object-fit-cover" alt="Gut Microbiome">
+                  <a href="video-details.html?id=vid-8" class="card-play-overlay"><i
+                      class="bi bi-play-fill text-white fs-5"></i></a>
+                  <span class="video-duration-badge" style="font-size: 0.68rem; bottom: 4px; right: 4px;">15:05</span>
+                </div>
+                <div class="d-flex flex-column justify-content-between">
+                  <a href="video-details.html?id=vid-8" class="fw-semibold font-serif text-dark small line-clamp-2">Gut
+                    Microbiome & Fermented Foods: Kefir & Inulin</a>
+                  <span class="text-muted" style="font-size: 0.72rem;">Chloe Bennett • 79K views</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREATOR SPOTLIGHT -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-end section-header-editorial flex-wrap gap-3">
+        <div>
+          <span class="sub-heading-pill">Creator Network</span>
+          <h2 class="mb-2">Nutrition Specialists & Educators</h2>
+          <p class="text-secondary mb-0">Follow verified veterinarians, culinary formulators, and independent nutrition
+            investigators.</p>
+        </div>
+        <a href="creators.html" class="btn-paw-outline">
+          <span>View All Creators</span>
+          <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="row g-4">
+        <!-- Creator 1 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="creator-card">
+            <div class="creator-avatar-wrap">
+              <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=300&q=80"
+                alt="Dr. Maya Lin">
+              <span class="creator-badge-verified"><i class="bi bi-check-lg"></i></span>
+            </div>
+            <a href="creator-profile.html?id=dr-maya-lin" class="text-decoration-none">
+              <h5 class="font-serif mb-1 text-dark">Dr. Maya Lin, MS, DVM</h5>
+            </a>
+            <span class="creator-specialty">Canine Clinical Nutritionist</span>
+            <p class="creator-bio-snippet">Board-certified veterinary nutritionist dedicated to demystifying pet food
+              ingredients and protein bioavailability.</p>
+            <div class="creator-stats-bar">
+              <div>
+                <div class="stat-num">142.5K</div>
+                <div class="stat-label">Followers</div>
+              </div>
+              <div>
+                <div class="stat-num">48</div>
+                <div class="stat-label">Resources</div>
+              </div>
+            </div>
+            <button class="btn-follow w-100" data-creator-id="dr-maya-lin" data-creator-name="Dr. Maya Lin">
+              <i class="bi bi-person-plus"></i> Follow
+            </button>
+          </div>
+        </div>
+
+        <!-- Creator 2 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="creator-card">
+            <div class="creator-avatar-wrap">
+              <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=300&q=80"
+                alt="Chef Tyler Brooks">
+              <span class="creator-badge-verified"><i class="bi bi-check-lg"></i></span>
+            </div>
+            <a href="creator-profile.html?id=chef-tyler-brooks" class="text-decoration-none">
+              <h5 class="font-serif mb-1 text-dark">Chef Tyler Brooks</h5>
+            </a>
+            <span class="creator-specialty">Fresh Pet Culinary & Formulation</span>
+            <p class="creator-bio-snippet">Former restaurant chef turned pet whole-food formulator. Specializing in
+              gently cooked home prep and organ meat.</p>
+            <div class="creator-stats-bar">
+              <div>
+                <div class="stat-num">98.3K</div>
+                <div class="stat-label">Followers</div>
+              </div>
+              <div>
+                <div class="stat-num">62</div>
+                <div class="stat-label">Resources</div>
+              </div>
+            </div>
+            <button class="btn-follow w-100" data-creator-id="chef-tyler-brooks" data-creator-name="Chef Tyler Brooks">
+              <i class="bi bi-person-plus"></i> Follow
+            </button>
+          </div>
+        </div>
+
+        <!-- Creator 3 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="creator-card">
+            <div class="creator-avatar-wrap">
+              <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=300&q=80"
+                alt="Dr. Aris Thorne">
+              <span class="creator-badge-verified"><i class="bi bi-check-lg"></i></span>
+            </div>
+            <a href="creator-profile.html?id=dr-aris-thorne" class="text-decoration-none">
+              <h5 class="font-serif mb-1 text-dark">Dr. Aris Thorne, DVM</h5>
+            </a>
+            <span class="creator-specialty">Feline Nutrition Specialist</span>
+            <p class="creator-bio-snippet">Dedicated solely to obligate carnivore biology. Championing moisture-rich
+              feeding, urinary health, and taurine balance.</p>
+            <div class="creator-stats-bar">
+              <div>
+                <div class="stat-num">86.4K</div>
+                <div class="stat-label">Followers</div>
+              </div>
+              <div>
+                <div class="stat-num">39</div>
+                <div class="stat-label">Resources</div>
+              </div>
+            </div>
+            <button class="btn-follow w-100" data-creator-id="dr-aris-thorne" data-creator-name="Dr. Aris Thorne">
+              <i class="bi bi-person-plus"></i> Follow
+            </button>
+          </div>
+        </div>
+
+        <!-- Creator 4 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="creator-card">
+            <div class="creator-avatar-wrap">
+              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=300&q=80"
+                alt="Elena Rostova">
+              <span class="creator-badge-verified"><i class="bi bi-check-lg"></i></span>
+            </div>
+            <a href="creator-profile.html?id=elena-rostova" class="text-decoration-none">
+              <h5 class="font-serif mb-1 text-dark">Elena Rostova</h5>
+            </a>
+            <span class="creator-specialty">Pet Food Label Analyst</span>
+            <p class="creator-bio-snippet">Independent pet food watchdog uncovering ingredient splitting, rendering
+              practices, and AAFCO labeling loopholes.</p>
+            <div class="creator-stats-bar">
+              <div>
+                <div class="stat-num">121.0K</div>
+                <div class="stat-label">Followers</div>
+              </div>
+              <div>
+                <div class="stat-num">74</div>
+                <div class="stat-label">Resources</div>
+              </div>
+            </div>
+            <button class="btn-follow w-100" data-creator-id="elena-rostova" data-creator-name="Elena Rostova">
+              <i class="bi bi-person-plus"></i> Follow
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ASYMMETRIC EDITOR'S PICKS -->
+  <section class="section-padding border-top" style="background-color: #FFFFFF;">
+    <div class="container">
+      <div class="section-header-editorial text-center max-w-700 mx-auto mb-5">
+        <span class="sub-heading-pill">Curated Selections</span>
+        <h2 class="mb-3">Editor's Editorial Showcase</h2>
+        <p class="text-secondary">Hand-picked guides, landmark videos, and essential nutritional foundations.</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Feature 1: Large Guide -->
+        <div class="col-lg-7">
+          <div class="paw-card guide-card h-100">
+            <div class="guide-thumb-wrap" style="height: 280px;">
+              <img src="https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=1200&q=80"
+                alt="Pet Food Label Decoder">
+              <span class="video-category-tag">Must Read</span>
+              <span class="guide-read-badge"><i class="bi bi-clock me-1"></i>9 min read</span>
+              <button class="btn-save-bookmark" data-type="guides" data-id="guide-1"
+                data-title="The Definitive Pet Food Label Decoder">
+                <i class="bi bi-bookmark"></i>
+              </button>
+            </div>
+            <div class="card-body p-4">
+              <span class="sub-heading-pill mb-2">AAFCO & Regulatory Guide</span>
+              <h3 class="font-serif mb-3"><a href="guide-details.html?id=guide-1" class="text-dark">The Definitive Pet
+                  Food Label Decoder: A Step-by-Step Field Guide</a></h3>
+              <p class="text-secondary mb-4">Learn how to calculate Dry Matter Basis (DMB), decode the 95% vs 25%
+                labeling rules, and uncover ingredient splitting techniques.</p>
+              <div class="d-flex align-items-center justify-content-between pt-3 border-top mt-auto">
+                <span class="text-muted small">By Elena Rostova • Updated March 2026</span>
+                <a href="guide-details.html?id=guide-1" class="btn-paw-outline btn-sm">Read Full Guide →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 2: Side Stack -->
+        <div class="col-lg-5">
+          <div class="d-flex flex-column gap-4 h-100">
+            <!-- Item 1 -->
+            <div class="paw-card p-4 flex-grow-1">
+              <span class="badge bg-surface text-forest border mb-2">Protein Bioavailability</span>
+              <h5 class="font-serif mb-2"><a href="guide-details.html?id=guide-2" class="text-dark">The Canine Protein
+                  Masterclass: Bioavailability & Novel Meats</a></h5>
+              <p class="text-secondary small mb-3">Explore biological value scales of animal vs plant proteins and novel
+                hypoallergenic sources.</p>
+              <a href="guide-details.html?id=guide-2" class="text-forest fw-bold small">Explore Guide →</a>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="paw-card p-4 flex-grow-1">
+              <span class="badge bg-terracotta text-white mb-2">Safe Feeding</span>
+              <h5 class="font-serif mb-2"><a href="guide-details.html?id=guide-4" class="text-dark">Safe Transitioning
+                  Protocol: Changing Foods Without Upset</a></h5>
+              <p class="text-secondary small mb-3">A practical 10-day step-down timeline with soluble fiber buffers to
+                eliminate digestive stress.</p>
+              <a href="guide-details.html?id=guide-4" class="text-terracotta fw-bold small">View 10-Day Plan →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CALL TO ACTION -->
+  <section class="section-padding text-white position-relative overflow-hidden"
+    style="background-color: var(--color-forest-dark);">
+    <div class="container text-center py-4 position-relative" style="z-index: 2;">
+      <h2 class="text-white font-serif mb-3 display-5">“There’s More to Pet Food Than the Label.”</h2>
+      <p class="text-white-50 text-editorial-lead max-w-700 mx-auto mb-4">
+        Explore evidence-backed feeding knowledge and trusted creator masterclasses.
+      </p>
+      <div class="d-flex justify-content-center flex-wrap gap-3">
+        <a href="discover.html" class="btn-paw-terracotta px-4 py-3 fs-6">
+          <span>Explore All Discoveries</span>
+          <i class="bi bi-arrow-right"></i>
+        </a>
+        <a href="videos.html" class="btn btn-outline-light rounded-pill px-4 py-3 fw-semibold">
+          <i class="bi bi-play-circle me-1"></i> Watch Videos
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATIONAL DISCLAIMER BAR -->
+  <aside class="container" aria-label="Veterinary disclaimer">
+    <div class="paw-disclaimer-box my-4">
+      <i class="bi bi-info-circle-fill"></i>
+      <div>
+        <strong class="text-dark">Educational Positioning Notice:</strong>
+        PAWFORM provides educational information and is not a substitute for veterinary advice, diagnosis, or clinical
+        treatment. Always consult your veterinarian before making radical alterations to your companion's diet.
+      </div>
+    </div>
+  </aside>
+
+  <!-- MASTER FOOTER -->
+  <footer class="paw-footer">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <div class="col-lg-5">
+          <a class="footer-logo mb-3" href="index.html">PAWFORM</a>
+          <p class="small text-secondary mb-4 pe-lg-4">
+            Discover Better Nutrition for Every Paw. Curated editorial guides, veterinary video masterclasses, and
+            verified ingredient breakdowns.
+          </p>
+          <div class="d-flex gap-2">
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="btn-paw-icon-nav"
+              style="width: 36px; height: 36px; font-size: 1rem;" aria-label="Instagram"><i
+                class="bi bi-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener" class="btn-paw-icon-nav"
+              style="width: 36px; height: 36px; font-size: 1rem;" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="https://x.com" target="_blank" rel="noopener" class="btn-paw-icon-nav"
+              style="width: 36px; height: 36px; font-size: 1rem;" aria-label="Twitter"><i
+                class="bi bi-twitter-x"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener" class="btn-paw-icon-nav"
+              style="width: 36px; height: 36px; font-size: 1rem;" aria-label="LinkedIn"><i
+                class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-3">
+          <div class="footer-title">Platform</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="videos.html">Videos</a></li>
+            <li><a href="creators.html">Creators</a></li>
+            <li><a href="guides.html">Guides</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="saved.html">Saved Library</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-4">
+          <div class="footer-title">Popular Topics</div>
+          <ul class="footer-links">
+            <li><a href="guides.html">Protein Bioavailability</a></li>
+            <li><a href="guides.html">Pet Food Label Decoder</a></li>
+            <li><a href="guides.html">Feline Hydration & Renal Care</a></li>
+            <li><a href="videos.html">Raw & Fresh Formulation</a></li>
+            <li><a href="videos.html">Puppy Growth Macros</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-4 border-top d-flex justify-content-between align-items-center flex-wrap gap-3 small text-muted">
+        <div>&copy; 2026 PAWFORM Platform. All rights reserved. Discover Better Nutrition for Every Paw.</div>
+        <div class="d-flex gap-3">
+          <a href="about.html" class="text-secondary text-decoration-none">Editorial Standards</a>
+          <a href="about.html" class="text-secondary text-decoration-none">Privacy Policy</a>
+          <a href="contact.html" class="text-secondary text-decoration-none">Contact Support</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core Application Scripts -->
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/bookmarks.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

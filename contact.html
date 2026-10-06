@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact PAWFORM — Inquiries, Creator Submissions & Community</title>
+  <meta name="description" content="Get in touch with the PAWFORM team for creator applications, veterinary research submissions, editorial feedback, and social channels.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  
+  <!-- Custom Design Tokens & Master Styles -->
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- Sticky Editorial Navbar -->
+  <nav class="paw-navbar navbar navbar-expand-lg">
+    <div class="container">
+      <!-- Brand Logo (No Icon, Identical Style & Color to Footer) -->
+      <a class="navbar-brand navbar-brand-logo" href="index.html">PAWFORM</a>
+
+      <!-- Desktop Nav Items -->
+      <div class="collapse navbar-collapse d-none d-lg-flex" id="pawformDesktopNav">
+        <ul class="navbar-nav ms-auto align-items-center gap-1">
+          <li class="nav-item"><a class="nav-link-paw" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link-paw" href="videos.html">Videos</a></li>
+          <li class="nav-item"><a class="nav-link-paw" href="creators.html">Creators</a></li>
+          <li class="nav-item"><a class="nav-link-paw" href="guides.html">Guides</a></li>
+          <li class="nav-item"><a class="nav-link-paw" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link-paw active" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="d-flex align-items-center ms-3">
+          <a href="saved.html" class="btn-paw-icon-nav position-relative" aria-label="Saved Collections" title="Saved Collections">
+            <i class="bi bi-bookmark"></i>
+          </a>
+          <a href="signup.html" class="btn-paw-primary btn-sm ms-2 px-3 py-2 text-decoration-none">Sign Up</a>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Actions -->
+      <div class="d-flex align-items-center d-lg-none ms-auto">
+        <button class="navbar-toggler-paw" id="pawformMobileToggle" aria-label="Open menu">
+          <i class="bi bi-list"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Offcanvas Drawer -->
+  <div class="paw-drawer-backdrop" id="pawformDrawerBackdrop"></div>
+  <aside class="paw-mobile-drawer" id="pawformMobileDrawer" aria-label="Mobile navigation">
+    <div class="d-flex justify-content-between align-items-center mb-4 pb-3 border-bottom">
+      <a class="navbar-brand-logo" href="index.html">PAWFORM</a>
+      <button class="btn-close" id="pawformCloseDrawer" aria-label="Close menu"></button>
+    </div>
+    <nav class="d-flex flex-column mb-4">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="videos.html" class="mobile-nav-link">Videos</a>
+      <a href="creators.html" class="mobile-nav-link">Creators</a>
+      <a href="guides.html" class="mobile-nav-link">Guides</a>
+      <a href="about.html" class="mobile-nav-link">About</a>
+      <a href="contact.html" class="mobile-nav-link active">Contact</a>
+      <a href="saved.html" class="mobile-nav-link"><i class="bi bi-bookmark me-2"></i>Saved Library</a>
+    </nav>
+    <div class="pt-3 border-top">
+      <a href="signup.html" class="btn-paw-primary w-100 text-center py-2 text-decoration-none">Sign Up Free</a>
+    </div>
+  </aside>
+
+  <!-- CONTACT HEADER -->
+  <header class="py-5 border-bottom" style="background-color: var(--bg-primary);">
+    <div class="container text-center max-w-700 mx-auto">
+      <span class="sub-heading-pill mb-2">Get in Touch</span>
+      <h1 class="mb-2">Connect With PAWFORM</h1>
+      <p class="text-secondary mb-0">Whether you are a veterinary nutritionist looking to publish, or a pet parent seeking guidance, we are here to support you.</p>
+    </div>
+  </header>
+
+  <!-- CONTACT FORM & INFO -->
+  <main class="section-padding">
+    <div class="container">
+      <div class="row g-5">
+        <!-- Form (Left 7 cols) -->
+        <div class="col-lg-7">
+          <div class="paw-card p-4 p-md-5">
+            <h3 class="font-serif mb-4">Send Us a Direct Message</h3>
+            
+            <form id="pawformContactForm">
+              <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                  <label for="contactFullName" class="form-label small fw-bold text-muted">Your Full Name</label>
+                  <input type="text" class="form-control" id="contactFullName" placeholder="e.g. Dr. Jane Doe" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="contactEmail" class="form-label small fw-bold text-muted">Email Address</label>
+                  <input type="email" class="form-control" id="contactEmail" placeholder="jane@example.com" required>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="contactType" class="form-label small fw-bold text-muted">Inquiry Category</label>
+                <select class="form-select" id="contactType" required>
+                  <option value="general" selected>General Support & Feedback</option>
+                  <option value="creator">Creator & Veterinary Publishing Inquiry</option>
+                  <option value="suggestion">Suggest a Guide or Video Topic</option>
+                  <option value="partnership">Educational Partnership</option>
+                </select>
+              </div>
+
+              <div class="mb-4">
+                <label for="contactMessage" class="form-label small fw-bold text-muted">Message / Details</label>
+                <textarea class="form-control" id="contactMessage" rows="5" placeholder="Tell us how we can help..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn-paw-primary px-4 py-2">
+                <span>Send Message</span>
+                <i class="bi bi-send ms-1"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Right Side: Info & FAQs (5 cols) -->
+        <div class="col-lg-5">
+          <div class="d-flex flex-column gap-4">
+            <!-- Social Channels Box -->
+            <div class="paw-card p-4">
+              <h5 class="font-serif mb-2">Follow Our Channels</h5>
+              <p class="small text-secondary mb-3">Join over 350,000+ pet parents receiving weekly nutritional breakdowns, masterclass alerts, and research digests.</p>
+              
+              <div class="d-flex flex-wrap gap-2">
+                <a href="https://instagram.com" target="_blank" rel="noopener" class="d-inline-flex align-items-center gap-2 px-3 py-2 border rounded-pill text-decoration-none text-dark bg-surface shadow-xs" style="font-size: 0.88rem;">
+                  <i class="bi bi-instagram text-danger"></i>
+                  <span class="fw-semibold">Instagram</span>
+                </a>
+                <a href="https://youtube.com" target="_blank" rel="noopener" class="d-inline-flex align-items-center gap-2 px-3 py-2 border rounded-pill text-decoration-none text-dark bg-surface shadow-xs" style="font-size: 0.88rem;">
+                  <i class="bi bi-youtube text-danger"></i>
+                  <span class="fw-semibold">YouTube</span>
+                </a>
+                <a href="https://x.com" target="_blank" rel="noopener" class="d-inline-flex align-items-center gap-2 px-3 py-2 border rounded-pill text-decoration-none text-dark bg-surface shadow-xs" style="font-size: 0.88rem;">
+                  <i class="bi bi-twitter-x"></i>
+                  <span class="fw-semibold">X / Twitter</span>
+                </a>
+                <a href="https://tiktok.com" target="_blank" rel="noopener" class="d-inline-flex align-items-center gap-2 px-3 py-2 border rounded-pill text-decoration-none text-dark bg-surface shadow-xs" style="font-size: 0.88rem;">
+                  <i class="bi bi-tiktok text-dark"></i>
+                  <span class="fw-semibold">TikTok</span>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener" class="d-inline-flex align-items-center gap-2 px-3 py-2 border rounded-pill text-decoration-none text-dark bg-surface shadow-xs" style="font-size: 0.88rem;">
+                  <i class="bi bi-linkedin text-primary"></i>
+                  <span class="fw-semibold">LinkedIn</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Editorial Desk -->
+            <div class="paw-card p-4">
+              <h5 class="font-serif mb-3">Editorial Desk</h5>
+              <p class="small text-secondary mb-3">For research suggestions, scientific corrections, or peer review inquiries.</p>
+              <div class="small fw-semibold text-forest mb-1"><i class="bi bi-envelope me-2"></i> editorial@pawform.example.com</div>
+              <div class="small text-muted"><i class="bi bi-clock me-2"></i> Response time: Within 24-48 business hours</div>
+            </div>
+
+            <!-- FAQs -->
+            <div class="paw-card p-4">
+              <h5 class="font-serif mb-3">Frequently Asked Questions</h5>
+              <div class="accordion accordion-flush" id="contactFaq">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed py-2 px-0 fw-semibold small" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                      Are creators paid by pet food brands?
+                    </button>
+                  </h2>
+                  <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#contactFaq">
+                    <div class="accordion-body px-0 small text-secondary">
+                      No. PAWFORM maintains strict editorial separation from sponsored brand placements. All educational analyses are independent.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed py-2 px-0 fw-semibold small" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                      How can I apply to become a verified creator?
+                    </button>
+                  </h2>
+                  <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#contactFaq">
+                    <div class="accordion-body px-0 small text-secondary">
+                      Select "Creator & Veterinary Publishing Inquiry" on this contact form with your qualifications and published work. Our scientific board reviews applications weekly.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- INTERACTIVE LOCATION & RESEARCH LAB MAP SECTION -->
+  <section class="section-padding border-top" style="background-color: #FFFFFF;">
+    <div class="container">
+      <div class="section-header-editorial text-center max-w-700 mx-auto mb-4">
+        <span class="sub-heading-pill">Editorial Headquarters & Lab</span>
+        <h2 class="mb-2">Visit Our Nutrition Research Studio</h2>
+        <p class="text-secondary">Located in San Francisco's innovation district, where our veterinary editorial board films video masterclasses and reviews pet food formulations.</p>
+      </div>
+
+      <div class="paw-card overflow-hidden shadow-sm">
+        <div class="row g-0">
+          <div class="col-lg-8">
+            <!-- Google Maps Embed -->
+            <div style="width: 100%; height: 380px; position: relative;">
+              <iframe 
+                title="PAWFORM Editorial Headquarters Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.2573711910604!2d-122.40134442345598!3d37.78401827198394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085807d8848d591%3A0x6b2b730f7be52b86!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 p-4 p-md-5 d-flex flex-column justify-content-center bg-surface border-start">
+            <h5 class="font-serif mb-3">PAWFORM Nutrition Media Studio</h5>
+            
+            <div class="mb-3">
+              <div class="small fw-bold text-muted text-uppercase mb-1">Address</div>
+              <p class="small text-secondary mb-0">
+                450 Mission Street, Suite 800<br>
+                San Francisco, CA 94105<br>
+                United States
+              </p>
+            </div>
+
+            <div class="mb-3">
+              <div class="small fw-bold text-muted text-uppercase mb-1">Media Studio Hours</div>
+              <p class="small text-secondary mb-0">
+                Monday – Friday: 9:00 AM – 5:30 PM PST<br>
+                Veterinary Filming Days: Tuesday & Thursday
+              </p>
+            </div>
+
+            <div>
+              <div class="small fw-bold text-muted text-uppercase mb-1">Direct Contact</div>
+              <p class="small text-secondary mb-0">
+                <strong>Phone:</strong> +1 (415) 555-7293<br>
+                <strong>Inquiries:</strong> studio@pawform.example.com
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DISCLAIMER -->
+  <aside class="container">
+    <div class="paw-disclaimer-box my-4">
+      <i class="bi bi-info-circle-fill"></i>
+      <div>
+        <strong class="text-dark">Educational Disclaimer:</strong>
+        PAWFORM provides educational information and is not a substitute for veterinary advice.
+      </div>
+    </div>
+  </aside>
+
+  <!-- MASTER FOOTER -->
+  <footer class="paw-footer">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <div class="col-lg-5">
+          <a class="footer-logo mb-3" href="index.html">PAWFORM</a>
+          <p class="small text-secondary mb-4 pe-lg-4">
+            Discover Better Nutrition for Every Paw. Curated editorial guides, veterinary video masterclasses, and verified ingredient breakdowns.
+          </p>
+          <div class="d-flex gap-2">
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="btn-paw-icon-nav" style="width: 36px; height: 36px; font-size: 1rem;" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener" class="btn-paw-icon-nav" style="width: 36px; height: 36px; font-size: 1rem;" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="https://x.com" target="_blank" rel="noopener" class="btn-paw-icon-nav" style="width: 36px; height: 36px; font-size: 1rem;" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener" class="btn-paw-icon-nav" style="width: 36px; height: 36px; font-size: 1rem;" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-3">
+          <div class="footer-title">Platform</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="videos.html">Videos</a></li>
+            <li><a href="creators.html">Creators</a></li>
+            <li><a href="guides.html">Guides</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="saved.html">Saved Library</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-4">
+          <div class="footer-title">Popular Topics</div>
+          <ul class="footer-links">
+            <li><a href="guides.html">Protein Bioavailability</a></li>
+            <li><a href="guides.html">Pet Food Label Decoder</a></li>
+            <li><a href="guides.html">Feline Hydration & Renal Care</a></li>
+            <li><a href="videos.html">Raw & Fresh Formulation</a></li>
+            <li><a href="videos.html">Puppy Growth Macros</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-4 border-top d-flex justify-content-between align-items-center flex-wrap gap-3 small text-muted">
+        <div>&copy; 2026 PAWFORM Platform. All rights reserved. Discover Better Nutrition for Every Paw.</div>
+        <div class="d-flex gap-3">
+          <a href="about.html" class="text-secondary text-decoration-none">Editorial Standards</a>
+          <a href="about.html" class="text-secondary text-decoration-none">Privacy Policy</a>
+          <a href="contact.html" class="text-secondary text-decoration-none">Contact Support</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/bookmarks.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.getElementById('pawformContactForm')?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      showToast('Message Sent', 'Thank you! The PAWFORM team will review your inquiry shortly.', 'success');
+      e.target.reset();
+    });
+  </script>
+</body>
+</html>
+

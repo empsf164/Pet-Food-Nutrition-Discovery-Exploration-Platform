@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creator Profile — PAWFORM</title>
+  <meta name="description" content="Explore videos, guides, and nutrition advice from verified pet food specialists.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  
+  <!-- Custom Design Tokens & Master Styles -->
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- Sticky Editorial Navbar -->
+  <nav class="paw-navbar navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand navbar-brand-logo" href="index.html">PAWFORM</a>
+
+      <div class="collapse navbar-collapse d-none d-lg-flex" id="pawformDesktopNav">
+        <ul class="navbar-nav ms-auto align-items-center gap-1">
+          <li class="nav-item"><a class="nav-link-paw" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link-paw" href="videos.html">Videos</a></li>
+          <li class="nav-item"><a class="nav-link-paw active" href="creators.html">Creators</a></li>
+          <li class="nav-item"><a class="nav-link-paw" href="guides.html">Guides</a></li>
+          <li class="nav-item"><a class="nav-link-paw" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link-paw" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="d-flex align-items-center ms-3">
+          <a href="saved.html" class="btn-paw-icon-nav position-relative" aria-label="Saved Collections" title="Saved Collections">
+            <i class="bi bi-bookmark"></i>
+          </a>
+          <a href="signup.html" class="btn-paw-primary btn-sm ms-2 px-3 py-2 text-decoration-none">Sign Up</a>
+        </div>
+      </div>
+
+      <div class="d-flex align-items-center d-lg-none ms-auto">
+        <button class="navbar-toggler-paw" id="pawformMobileToggle" aria-label="Open menu">
+          <i class="bi bi-list"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Offcanvas Drawer -->
+  <div class="paw-drawer-backdrop" id="pawformDrawerBackdrop"></div>
+  <aside class="paw-mobile-drawer" id="pawformMobileDrawer" aria-label="Mobile navigation">
+    <div class="d-flex justify-content-between align-items-center mb-4 pb-3 border-bottom">
+      <a class="navbar-brand-logo" href="index.html">PAWFORM</a>
+      <button class="btn-close" id="pawformCloseDrawer" aria-label="Close menu"></button>
+    </div>
+    <nav class="d-flex flex-column mb-4">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="videos.html" class="mobile-nav-link">Videos</a>
+      <a href="creators.html" class="mobile-nav-link active">Creators</a>
+      <a href="guides.html" class="mobile-nav-link">Guides</a>
+      <a href="about.html" class="mobile-nav-link">About</a>
+      <a href="contact.html" class="mobile-nav-link">Contact</a>
+      <a href="saved.html" class="mobile-nav-link"><i class="bi bi-bookmark me-2"></i>Saved Library</a>
+    </nav>
+    <div class="pt-3 border-top">
+      <a href="signup.html" class="btn-paw-primary w-100 text-center py-2 text-decoration-none">Sign Up Free</a>
+    </div>
+  </aside>
+
+  <!-- CREATOR COVER & PROFILE HEADER -->
+  <header class="position-relative pb-4 border-bottom" style="background-color: var(--bg-primary);">
+    <div class="container-fluid px-0">
+      <div style="height: 240px; overflow: hidden; background-color: var(--color-forest-dark);">
+        <img src="" id="creatorCoverImg" class="w-100 h-100 object-fit-cover opacity-75" alt="Cover">
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row align-items-end" style="margin-top: -55px;">
+        <div class="col-auto position-relative">
+          <img src="" id="creatorAvatarImg" class="rounded-circle shadow-md border border-4 border-white bg-white" style="width: 120px; height: 120px; object-fit: cover;" alt="Avatar">
+        </div>
+
+        <div class="col mt-3 mt-md-0">
+          <div class="d-flex justify-content-between align-items-start flex-wrap gap-3">
+            <div>
+              <h1 class="font-serif fs-2 mb-1 text-dark" id="creatorProfileName">Creator Name</h1>
+              <div class="text-terracotta fw-semibold small mb-2" id="creatorProfileSpecialty">Specialty</div>
+              <div class="text-muted small">
+                <span id="creatorProfileHandle" class="me-3">@handle</span>
+                <i class="bi bi-geo-alt"></i> <span id="creatorProfileLocation">Location</span>
+              </div>
+            </div>
+
+            <div class="d-flex gap-2 align-items-center">
+              <button class="btn-follow px-4 py-2" id="creatorProfileFollowBtn" data-creator-id="" data-creator-name="">
+                <i class="bi bi-person-plus"></i> Follow
+              </button>
+              <button class="btn btn-sm btn-paw-outline" data-action="share">
+                <i class="bi bi-share"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bio & Stats Bar -->
+      <div class="row mt-4 pt-3 border-top g-4">
+        <div class="col-lg-8">
+          <p class="text-secondary mb-3" id="creatorProfileBio">Creator full bio...</p>
+          <div class="d-flex flex-wrap" id="creatorBadgesList">
+            <!-- Badges rendered via JS -->
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="paw-card p-3 bg-surface border">
+            <div class="row text-center">
+              <div class="col-6 border-end">
+                <div class="fw-bold fs-4 text-forest" id="creatorFollowersCount">0K</div>
+                <div class="text-muted small">Followers</div>
+              </div>
+              <div class="col-6">
+                <div class="fw-bold fs-4 text-forest" id="creatorContentCount">0</div>
+                <div class="text-muted small">Resources Published</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- CREATOR CONTENT TABS -->
+  <main class="section-padding">
+    <div class="container">
+      <ul class="nav nav-pills mb-4 gap-2 border-bottom pb-3" id="creatorTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="btn btn-outline-secondary rounded-pill active" id="videos-tab" data-bs-toggle="tab" data-bs-target="#tab-videos" type="button" role="tab"><i class="bi bi-play-circle me-1"></i> Video Masterclasses</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="btn btn-outline-secondary rounded-pill" id="guides-tab" data-bs-toggle="tab" data-bs-target="#tab-guides" type="button" role="tab"><i class="bi bi-journal-text me-1"></i> Guides & Articles</button>
+        </li>
+      </ul>
+
+      <div class="tab-content" id="creatorTabsContent">
+        <!-- Videos Tab -->
+        <div class="tab-pane fade show active" id="tab-videos" role="tabpanel">
+          <div class="row g-4" id="creatorVideosContainer">
+            <!-- Populated via creator-profile.js -->
+          </div>
+        </div>
+
+        <!-- Guides Tab -->
+        <div class="tab-pane fade" id="tab-guides" role="tabpanel">
+          <div class="row g-4" id="creatorGuidesContainer">
+            <!-- Populated via creator-profile.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- DISCLAIMER -->
+  <aside class="container">
+    <div class="paw-disclaimer-box my-4">
+      <i class="bi bi-info-circle-fill"></i>
+      <div>
+        <strong class="text-dark">Educational Disclaimer:</strong>
+        PAWFORM provides educational information and is not a substitute for veterinary advice.
+      </div>
+    </div>
+  </aside>
+
+  <!-- MASTER FOOTER -->
+  <footer class="paw-footer">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <div class="col-lg-5">
+          <a class="footer-logo mb-3" href="index.html">PAWFORM</a>
+          <p class="small text-secondary mb-4 pe-lg-4">
+            Discover Better Nutrition for Every Paw. Curated editorial guides, veterinary video masterclasses, and verified ingredient breakdowns.
+          </p>
+          <div class="d-flex gap-2">
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="btn-paw-icon-nav" style="width: 36px; height: 36px; font-size: 1rem;" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener" class="btn-paw-icon-nav" style="width: 36px; height: 36px; font-size: 1rem;" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="https://x.com" target="_blank" rel="noopener" class="btn-paw-icon-nav" style="width: 36px; height: 36px; font-size: 1rem;" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener" class="btn-paw-icon-nav" style="width: 36px; height: 36px; font-size: 1rem;" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-3">
+          <div class="footer-title">Platform</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="videos.html">Videos</a></li>
+            <li><a href="creators.html">Creators</a></li>
+            <li><a href="guides.html">Guides</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="saved.html">Saved Library</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-4">
+          <div class="footer-title">Popular Topics</div>
+          <ul class="footer-links">
+            <li><a href="guides.html">Protein Bioavailability</a></li>
+            <li><a href="guides.html">Pet Food Label Decoder</a></li>
+            <li><a href="guides.html">Feline Hydration & Renal Care</a></li>
+            <li><a href="videos.html">Raw & Fresh Formulation</a></li>
+            <li><a href="videos.html">Puppy Growth Macros</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-4 border-top d-flex justify-content-between align-items-center flex-wrap gap-3 small text-muted">
+        <div>&copy; 2026 PAWFORM Platform. All rights reserved. Discover Better Nutrition for Every Paw.</div>
+        <div class="d-flex gap-3">
+          <a href="about.html" class="text-secondary text-decoration-none">Editorial Standards</a>
+          <a href="about.html" class="text-secondary text-decoration-none">Privacy Policy</a>
+          <a href="contact.html" class="text-secondary text-decoration-none">Contact Support</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/bookmarks.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/creator-profile.js"></script>
+</body>
+</html>

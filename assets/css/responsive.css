@@ -1,0 +1,328 @@
+/* ==========================================================================
+   PAWFORM - Responsive & Mobile Specific Styles
+   ========================================================================== */
+
+/* Body scroll lock when mobile menu or modal is open */
+body.scroll-locked {
+  overflow: hidden !important;
+  touch-action: none;
+}
+
+/* Mobile Hamburger Button */
+.navbar-toggler-paw {
+  border: 1px solid var(--border-medium);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.navbar-toggler-paw:hover {
+  background: var(--bg-secondary);
+  color: var(--color-forest);
+}
+
+/* Mobile Offcanvas Menu */
+.paw-mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  max-width: 360px;
+  height: 100vh;
+  height: 100dvh;
+  background-color: var(--bg-primary);
+  z-index: 1045;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow-y: auto;
+  padding: 1.5rem;
+  border-left: 1px solid var(--border-medium);
+}
+.paw-mobile-drawer.open {
+  right: 0;
+}
+.paw-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-backdrop);
+  backdrop-filter: blur(4px);
+  z-index: 1040;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.paw-drawer-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 0.5rem;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-bottom: 1px solid var(--border-light);
+  text-decoration: none;
+}
+.mobile-nav-link:hover, .mobile-nav-link.active {
+  color: var(--color-forest);
+}
+[data-theme="dark"] .mobile-nav-link:hover, [data-theme="dark"] .mobile-nav-link.active {
+  color: var(--color-sage);
+}
+
+.mobile-submenu {
+  padding-left: 1rem;
+  display: none;
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-sm);
+  margin: 0.5rem 0;
+}
+.mobile-submenu.open {
+  display: block;
+}
+.mobile-submenu a {
+  display: block;
+  padding: 0.6rem 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+/* Responsive Breakpoints */
+
+/* Large Tablets & Small Laptops (<= 1024px) */
+@media (max-width: 1024px) {
+  .hero-main-img {
+    height: 380px;
+  }
+  .map-exploration-layout {
+    grid-template-columns: 380px 1fr;
+  }
+  .card-thumb-wrap, .guide-thumb-wrap, .loc-thumb {
+    height: 190px;
+  }
+}
+
+/* ==========================================================================
+   Tablet & 1024px View (576px - 1024px): 2 Cards Per Row, Odd Card Centered
+   ========================================================================== */
+@media (min-width: 576px) and (max-width: 1024px) {
+  /* Ensure parent row justifies items nicely when odd */
+  .row:has(> [class*="col-"] > .paw-card),
+  .row:has(> [class*="col-"] > .video-card),
+  .row:has(> [class*="col-"] > .guide-card),
+  .row:has(> [class*="col-"] > .creator-card),
+  .row:has(> [class*="col-"] > .location-card),
+  #videosGridContainer,
+  #creatorsGridContainer,
+  #guidesGridContainer,
+  #discoverContentGrid,
+  #savedItemsGrid,
+  #relatedVideosContainer,
+  #creatorVideosContainer,
+  #creatorGuidesContainer {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
+
+  /* Force 2 cards per row on tab & 1024px */
+  .row:has(> [class*="col-"] > .paw-card) > [class*="col-"],
+  .row:has(> [class*="col-"] > .video-card) > [class*="col-"],
+  .row:has(> [class*="col-"] > .guide-card) > [class*="col-"],
+  .row:has(> [class*="col-"] > .creator-card) > [class*="col-"],
+  .row:has(> [class*="col-"] > .location-card) > [class*="col-"],
+  #videosGridContainer > [class*="col-"],
+  #creatorsGridContainer > [class*="col-"],
+  #guidesGridContainer > [class*="col-"],
+  #discoverContentGrid > [class*="col-"],
+  #savedItemsGrid > [class*="col-"],
+  #relatedVideosContainer > [class*="col-"],
+  #creatorVideosContainer > [class*="col-"],
+  #creatorGuidesContainer > [class*="col-"] {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+    width: 50% !important;
+  }
+
+  /* Center the last odd-numbered card */
+  .row:has(> [class*="col-"] > .paw-card) > [class*="col-"]:last-child:nth-child(odd),
+  .row:has(> [class*="col-"] > .video-card) > [class*="col-"]:last-child:nth-child(odd),
+  .row:has(> [class*="col-"] > .guide-card) > [class*="col-"]:last-child:nth-child(odd),
+  .row:has(> [class*="col-"] > .creator-card) > [class*="col-"]:last-child:nth-child(odd),
+  .row:has(> [class*="col-"] > .location-card) > [class*="col-"]:last-child:nth-child(odd),
+  #videosGridContainer > [class*="col-"]:last-child:nth-child(odd),
+  #creatorsGridContainer > [class*="col-"]:last-child:nth-child(odd),
+  #guidesGridContainer > [class*="col-"]:last-child:nth-child(odd),
+  #discoverContentGrid > [class*="col-"]:last-child:nth-child(odd),
+  #savedItemsGrid > [class*="col-"]:last-child:nth-child(odd),
+  #relatedVideosContainer > [class*="col-"]:last-child:nth-child(odd),
+  #creatorVideosContainer > [class*="col-"]:last-child:nth-child(odd),
+  #creatorGuidesContainer > [class*="col-"]:last-child:nth-child(odd) {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+/* Tablets (<= 991px) */
+@media (max-width: 991px) {
+  :root {
+    --nav-height: 70px;
+  }
+  
+  .paw-dropdown-menu {
+    min-width: 100%;
+    position: static !important;
+    transform: none !important;
+    box-shadow: none;
+    border: 1px solid var(--border-light);
+  }
+  
+  .dropdown-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .map-exploration-layout {
+    grid-template-columns: 1fr;
+    height: auto;
+    overflow: visible;
+  }
+  .map-canvas-container {
+    height: 420px;
+    position: sticky;
+    top: var(--nav-height);
+    z-index: 10;
+  }
+  .map-sidebar {
+    height: auto;
+    overflow-y: visible;
+    border-right: none;
+    border-top: 1px solid var(--border-medium);
+  }
+
+  .floating-nutrition-badge {
+    position: static;
+    margin-top: 1rem;
+  }
+  .floating-stat-badge {
+    position: static;
+    margin-top: 0.5rem;
+  }
+}
+
+/* Mobile Devices (<= 767px) */
+@media (max-width: 767px) {
+  .hero-editorial {
+    padding: 2.5rem 0 2rem;
+  }
+  .section-padding {
+    padding: 3rem 0;
+  }
+  
+  .hero-search-box {
+    flex-direction: row;
+    padding: 0.4rem 0.5rem 0.4rem 1rem;
+  }
+  .hero-search-box .btn-paw-primary {
+    padding: 0.55rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .hero-main-img {
+    height: 280px;
+    margin-top: 1.5rem;
+  }
+
+  .search-dialog-box {
+    max-height: 90vh;
+    border-radius: var(--radius-md);
+  }
+  .paw-search-modal {
+    padding-top: 2vh;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .paw-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .creator-stats-bar {
+    gap: 0.8rem;
+  }
+
+  .paw-toast-container {
+    bottom: 16px;
+    right: 16px;
+    left: 16px;
+  }
+  .paw-toast {
+    width: 100%;
+  }
+
+  .video-player-frame {
+    border-radius: var(--radius-md);
+  }
+}
+
+/* Small Mobiles (<= 480px) */
+@media (max-width: 480px) {
+  .navbar-brand-logo {
+    font-size: 1.35rem;
+  }
+  .brand-mark {
+    width: 32px;
+    height: 32px;
+    font-size: 1.05rem;
+  }
+  .nav-search-trigger .kbd-shortcut {
+    display: none;
+  }
+  .nav-search-trigger {
+    padding: 0.4rem 0.6rem;
+  }
+  .sub-heading-pill {
+    font-size: 0.72rem;
+  }
+  .guide-card .card-body {
+    padding: 1rem;
+  }
+  .creator-card {
+    padding: 1.1rem;
+  }
+}
+
+/* Mobile Phones (< 576px): 1 Card Per Row */
+@media (max-width: 575.98px) {
+  .row:has(> [class*="col-"] > .paw-card) > [class*="col-"],
+  .row:has(> [class*="col-"] > .video-card) > [class*="col-"],
+  .row:has(> [class*="col-"] > .guide-card) > [class*="col-"],
+  .row:has(> [class*="col-"] > .creator-card) > [class*="col-"],
+  .row:has(> [class*="col-"] > .location-card) > [class*="col-"],
+  #videosGridContainer > [class*="col-"],
+  #creatorsGridContainer > [class*="col-"],
+  #guidesGridContainer > [class*="col-"],
+  #discoverContentGrid > [class*="col-"],
+  #savedItemsGrid > [class*="col-"],
+  #relatedVideosContainer > [class*="col-"],
+  #creatorVideosContainer > [class*="col-"],
+  #creatorGuidesContainer > [class*="col-"] {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+}
