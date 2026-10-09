@@ -69,18 +69,27 @@ body.scroll-locked {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.85rem 0.5rem;
+  padding: 0.85rem 1rem;
   color: var(--text-primary);
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 600;
   border-bottom: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
   text-decoration: none;
+  transition: all var(--transition-fast);
+  margin-bottom: 0.35rem;
 }
 .mobile-nav-link:hover, .mobile-nav-link.active {
-  color: var(--color-forest);
+  color: var(--color-forest) !important;
+  background-color: var(--color-forest-subtle);
+  border-left: 4px solid var(--color-forest);
+  font-weight: 700;
+  padding-left: 1.15rem;
 }
 [data-theme="dark"] .mobile-nav-link:hover, [data-theme="dark"] .mobile-nav-link.active {
-  color: var(--color-sage);
+  color: var(--color-sage) !important;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-left: 4px solid var(--color-sage);
 }
 
 .mobile-submenu {
@@ -215,10 +224,13 @@ body.scroll-locked {
   .floating-nutrition-badge {
     position: static;
     margin-top: 1rem;
+    width: 100%;
   }
   .floating-stat-badge {
     position: static;
-    margin-top: 0.5rem;
+    margin-top: 0.75rem;
+    width: 100%;
+    display: block !important;
   }
 }
 
@@ -274,6 +286,14 @@ body.scroll-locked {
     width: 100%;
   }
 
+  .btn-back-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 42px;
+    height: 42px;
+    font-size: 1.1rem;
+  }
+
   .video-player-frame {
     border-radius: var(--radius-md);
   }
@@ -306,8 +326,45 @@ body.scroll-locked {
   }
 }
 
-/* Mobile Phones (< 576px): 1 Card Per Row */
+/* Mobile Phones (< 576px): 1 Card Per Row & Equal Button Sizing */
 @media (max-width: 575.98px) {
+  /* Item 1: Hero Section Buttons Equal Size on Mobile */
+  .hero-editorial .d-flex.flex-wrap.gap-3 {
+    display: flex !important;
+    flex-direction: row;
+    gap: 0.65rem !important;
+  }
+  .hero-editorial .d-flex.flex-wrap.gap-3 > .btn-paw-primary,
+  .hero-editorial .d-flex.flex-wrap.gap-3 > .btn-paw-secondary,
+  .hero-editorial .d-flex.flex-wrap.gap-3 > a {
+    flex: 1 1 0;
+    min-width: 130px;
+    padding: 0.75rem 0.85rem;
+    font-size: 0.88rem;
+    text-align: center;
+    justify-content: center;
+    white-space: nowrap;
+  }
+
+  /* Item 5: Before Footer Section Buttons Equal Size on Mobile */
+  section.position-relative .d-flex.justify-content-center.flex-wrap.gap-3,
+  .before-footer-cta .d-flex.justify-content-center.flex-wrap.gap-3 {
+    display: flex !important;
+    flex-direction: row;
+    gap: 0.65rem !important;
+  }
+  section.position-relative .d-flex.justify-content-center.flex-wrap.gap-3 > a,
+  section.position-relative .d-flex.justify-content-center.flex-wrap.gap-3 > button,
+  .before-footer-cta .d-flex.justify-content-center.flex-wrap.gap-3 > a {
+    flex: 1 1 0;
+    min-width: 130px;
+    padding: 0.75rem 0.85rem !important;
+    font-size: 0.88rem !important;
+    text-align: center;
+    justify-content: center;
+    white-space: nowrap;
+  }
+
   .row:has(> [class*="col-"] > .paw-card) > [class*="col-"],
   .row:has(> [class*="col-"] > .video-card) > [class*="col-"],
   .row:has(> [class*="col-"] > .guide-card) > [class*="col-"],
@@ -326,3 +383,4 @@ body.scroll-locked {
     width: 100% !important;
   }
 }
+

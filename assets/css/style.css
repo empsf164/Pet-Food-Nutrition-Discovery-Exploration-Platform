@@ -121,11 +121,23 @@ a:hover {
   transition: all var(--transition-normal);
   cursor: pointer;
 }
+.btn-paw-primary i {
+  transition: transform var(--transition-fast);
+  display: inline-block;
+}
 .btn-paw-primary:hover {
   background-color: var(--color-forest-dark);
   border-color: var(--color-forest-dark);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
+}
+.btn-paw-primary:hover i.bi-send,
+.btn-paw-primary:hover .bi-send {
+  transform: translate(3px, -3px);
+}
+.btn-paw-primary:hover i.bi-arrow-right,
+.btn-paw-primary:hover .bi-arrow-right {
+  transform: translateX(4px);
 }
 
 .btn-paw-secondary {
@@ -888,3 +900,95 @@ a:hover {
   border-color: var(--color-forest);
   color: var(--color-forest);
 }
+
+.auth-card-box a {
+  transition: all var(--transition-fast);
+  color: var(--color-forest);
+  text-decoration: none;
+}
+.auth-card-box a:hover {
+  color: var(--color-terracotta) !important;
+  text-decoration: underline;
+}
+
+/* Password Toggle Icon Button */
+.btn-toggle-password {
+  border: 1px solid var(--border-medium);
+  border-left: none;
+  background-color: #FFFFFF;
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+  padding: 0.5rem 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-top-right-radius: var(--radius-sm);
+  border-bottom-right-radius: var(--radius-sm);
+}
+.btn-toggle-password:hover {
+  background-color: var(--color-forest-subtle);
+  color: var(--color-forest);
+  border-color: var(--border-medium);
+}
+.input-group:focus-within .btn-toggle-password {
+  border-color: var(--color-forest);
+}
+
+/* ==========================================================================
+   Icon Brand-Mark Alignment Utility
+   ========================================================================== */
+.brand-mark {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+  border-radius: var(--radius-full);
+  line-height: 1 !important;
+  text-align: center;
+}
+.brand-mark i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+/* ==========================================================================
+   Back to Top Floating Button
+   ========================================================================== */
+.btn-back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: var(--color-forest);
+  color: #FFFFFF !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 1050;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+}
+.btn-back-to-top:hover {
+  background-color: var(--color-forest-dark);
+  color: #FFFFFF !important;
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+.btn-back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+

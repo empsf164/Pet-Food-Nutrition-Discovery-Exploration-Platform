@@ -204,6 +204,55 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Back to Top Button Auto-Initialization
+  let backToTopBtn = document.getElementById('backToTopBtn');
+  if (!backToTopBtn) {
+    backToTopBtn = document.createElement('button');
+    backToTopBtn.id = 'backToTopBtn';
+    backToTopBtn.className = 'btn-back-to-top';
+    backToTopBtn.setAttribute('aria-label', 'Back to top');
+    backToTopBtn.setAttribute('title', 'Back to top');
+    backToTopBtn.innerHTML = '<i class="bi bi-arrow-up"></i>';
+    document.body.appendChild(backToTopBtn);
+  }
+
+  function handleBackToTopVisibility() {
+    if (window.scrollY > 300) {
+      backToTopBtn.classList.add('visible');
+    } else {
+      backToTopBtn.classList.remove('visible');
+    }
+  }
+
+  window.addEventListener('scroll', handleBackToTopVisibility, { passive: true });
+  handleBackToTopVisibility();
+
+  backToTopBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+
+  // Password Visibility Toggle Logic
+  document.body.addEventListener('click', (e) => {
+    const toggleBtn = e.target.closest('.btn-toggle-password');
+    if (toggleBtn) {
+      e.preventDefault();
+      const parentGroup = toggleBtn.closest('.input-group') || toggleBtn.parentElement;
+      const passInput = parentGroup?.querySelector('input');
+      const icon = toggleBtn.querySelector('i');
+      if (passInput) {
+        const isPassword = passInput.getAttribute('type') === 'password';
+        passInput.setAttribute('type', isPassword ? 'text' : 'password');
+        if (icon) {
+          icon.className = isPassword ? 'bi bi-eye-slash' : 'bi bi-eye';
+        }
+      }
+    }
+  });
+
   // GSAP Entrance Animations if available
   if (typeof gsap !== 'undefined') {
     gsap.from('.hero-editorial h1', { opacity: 0, y: 30, duration: 0.8, ease: 'power2.out' });
