@@ -128,12 +128,28 @@ body.scroll-locked {
    Tablet & 1024px View (576px - 1024px): 2 Cards Per Row, Odd Card Centered
    ========================================================================== */
 @media (min-width: 576px) and (max-width: 1024px) {
-  /* Ensure parent row justifies items nicely when odd */
-  .row:has(> [class*="col-"] > .paw-card),
-  .row:has(> [class*="col-"] > .video-card),
-  .row:has(> [class*="col-"] > .guide-card),
-  .row:has(> [class*="col-"] > .creator-card),
-  .row:has(> [class*="col-"] > .location-card),
+  /* Prevent sidebar layout rows from being squished */
+  .row:has(> aside),
+  .row:has(> .col-lg-3),
+  .row:has(> .col-lg-9) {
+    display: flex !important;
+    flex-wrap: wrap !important;
+  }
+  .row:has(> aside) > aside,
+  .row:has(> aside) > .col-lg-9,
+  .row:has(> .col-lg-3) > .col-lg-3,
+  .row:has(> .col-lg-9) > .col-lg-9 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* Specific card grids: 2 cards per row, odd card centered */
+  .row:not(:has(> aside)):not(:has(> .col-lg-9)):has(> [class*="col-"] > .paw-card),
+  .row:not(:has(> aside)):not(:has(> .col-lg-9)):has(> [class*="col-"] > .video-card),
+  .row:not(:has(> aside)):not(:has(> .col-lg-9)):has(> [class*="col-"] > .guide-card),
+  .row:not(:has(> aside)):not(:has(> .col-lg-9)):has(> [class*="col-"] > .creator-card),
+  .row:not(:has(> aside)):not(:has(> .col-lg-9)):has(> [class*="col-"] > .location-card),
   #videosGridContainer,
   #creatorsGridContainer,
   #guidesGridContainer,
@@ -148,11 +164,11 @@ body.scroll-locked {
   }
 
   /* Force 2 cards per row on tab & 1024px */
-  .row:has(> [class*="col-"] > .paw-card) > [class*="col-"],
-  .row:has(> [class*="col-"] > .video-card) > [class*="col-"],
-  .row:has(> [class*="col-"] > .guide-card) > [class*="col-"],
-  .row:has(> [class*="col-"] > .creator-card) > [class*="col-"],
-  .row:has(> [class*="col-"] > .location-card) > [class*="col-"],
+  .row:not(:has(> aside)):not(:has(> .col-lg-9)):has(> [class*="col-"] > .paw-card) > [class*="col-"],
+  .row:not(:has(> aside)):not(:has(> .col-lg-9)):has(> [class*="col-"] > .video-card) > [class*="col-"],
+  .row:not(:has(> aside)):not(:has(> .col-lg-9)):has(> [class*="col-"] > .guide-card) > [class*="col-"],
+  .row:not(:has(> aside)):not(:has(> .col-lg-9)):has(> [class*="col-"] > .creator-card) > [class*="col-"],
+  .row:not(:has(> aside)):not(:has(> .col-lg-9)):has(> [class*="col-"] > .location-card) > [class*="col-"],
   #videosGridContainer > [class*="col-"],
   #creatorsGridContainer > [class*="col-"],
   #guidesGridContainer > [class*="col-"],
@@ -167,11 +183,11 @@ body.scroll-locked {
   }
 
   /* Center the last odd-numbered card */
-  .row:has(> [class*="col-"] > .paw-card) > [class*="col-"]:last-child:nth-child(odd),
-  .row:has(> [class*="col-"] > .video-card) > [class*="col-"]:last-child:nth-child(odd),
-  .row:has(> [class*="col-"] > .guide-card) > [class*="col-"]:last-child:nth-child(odd),
-  .row:has(> [class*="col-"] > .creator-card) > [class*="col-"]:last-child:nth-child(odd),
-  .row:has(> [class*="col-"] > .location-card) > [class*="col-"]:last-child:nth-child(odd),
+  .row:not(:has(> aside)):not(:has(> .col-lg-9)):has(> [class*="col-"] > .paw-card) > [class*="col-"]:last-child:nth-child(odd),
+  .row:not(:has(> aside)):not(:has(> .col-lg-9)):has(> [class*="col-"] > .video-card) > [class*="col-"]:last-child:nth-child(odd),
+  .row:not(:has(> aside)):not(:has(> .col-lg-9)):has(> [class*="col-"] > .guide-card) > [class*="col-"]:last-child:nth-child(odd),
+  .row:not(:has(> aside)):not(:has(> .col-lg-9)):has(> [class*="col-"] > .creator-card) > [class*="col-"]:last-child:nth-child(odd),
+  .row:not(:has(> aside)):not(:has(> .col-lg-9)):has(> [class*="col-"] > .location-card) > [class*="col-"]:last-child:nth-child(odd),
   #videosGridContainer > [class*="col-"]:last-child:nth-child(odd),
   #creatorsGridContainer > [class*="col-"]:last-child:nth-child(odd),
   #guidesGridContainer > [class*="col-"]:last-child:nth-child(odd),
@@ -236,6 +252,17 @@ body.scroll-locked {
 
 /* Mobile Devices (<= 767px) */
 @media (max-width: 767px) {
+  /* Footer Section on Mobile View: 1*1 Stacked Alignment */
+  .paw-footer .row > [class*="col-"] {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  .paw-footer .footer-title {
+    margin-top: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+
   .hero-editorial {
     padding: 2.5rem 0 2rem;
   }
@@ -346,23 +373,38 @@ body.scroll-locked {
     white-space: nowrap;
   }
 
-  /* Item 5: Before Footer Section Buttons Equal Size on Mobile */
+  /* Before Footer Section Buttons Equal Size on Mobile */
+  .before-footer-btns,
   section.position-relative .d-flex.justify-content-center.flex-wrap.gap-3,
   .before-footer-cta .d-flex.justify-content-center.flex-wrap.gap-3 {
     display: flex !important;
     flex-direction: row;
     gap: 0.65rem !important;
+    width: 100%;
   }
+  .before-footer-btns > a,
+  .before-footer-btns > button,
   section.position-relative .d-flex.justify-content-center.flex-wrap.gap-3 > a,
   section.position-relative .d-flex.justify-content-center.flex-wrap.gap-3 > button,
   .before-footer-cta .d-flex.justify-content-center.flex-wrap.gap-3 > a {
-    flex: 1 1 0;
+    flex: 1 1 0 !important;
     min-width: 130px;
     padding: 0.75rem 0.85rem !important;
     font-size: 0.88rem !important;
     text-align: center;
     justify-content: center;
     white-space: nowrap;
+  }
+
+  /* Footer Section on Mobile View: Menus aligned 1*1 */
+  .paw-footer .row > [class*="col-"] {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  .paw-footer .footer-title {
+    margin-top: 1.25rem;
+    margin-bottom: 0.75rem;
   }
 
   .row:has(> [class*="col-"] > .paw-card) > [class*="col-"],

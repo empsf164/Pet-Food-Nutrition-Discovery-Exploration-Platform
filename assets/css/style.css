@@ -185,6 +185,43 @@ a:hover {
   transform: translateY(-2px);
 }
 
+.btn-paw-secondary-light {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.75rem 1.6rem;
+  background-color: transparent;
+  color: #FFFFFF !important;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: var(--radius-full);
+  border: 1.5px solid rgba(255, 255, 255, 0.75);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-paw-secondary-light:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: #FFFFFF;
+  color: #FFFFFF !important;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.before-footer-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.before-footer-btns .btn-paw-terracotta,
+.before-footer-btns .btn-paw-secondary-light {
+  min-height: 50px;
+  line-height: 1.2;
+}
+
 .btn-paw-outline {
   display: inline-flex;
   align-items: center;

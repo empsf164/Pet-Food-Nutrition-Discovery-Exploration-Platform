@@ -26,9 +26,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const initialSearch = urlParams.get('search');
 
   if (initialTopic) {
+    let matched = false;
     topicFilters.forEach(cb => {
-      if (cb.value.toLowerCase() === initialTopic.toLowerCase()) cb.checked = true;
+      if (cb.value.toLowerCase() === initialTopic.toLowerCase()) {
+        cb.checked = true;
+        matched = true;
+      }
     });
+    if (!matched) {
+      speciesFilters.forEach(cb => {
+        if (cb.value.toLowerCase() === initialTopic.toLowerCase()) cb.checked = true;
+      });
+    }
   }
   if (initialSpecies) {
     speciesFilters.forEach(cb => {
