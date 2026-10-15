@@ -2,6 +2,39 @@
    PAWFORM - Responsive & Mobile Specific Styles
    ========================================================================== */
 
+/* Prevent any element from causing horizontal page overflow */
+html, body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+/* ==========================================================================
+   Sidebar filter card vs. disclaimer box: never overlap
+   ========================================================================== */
+/* Sticky filter card never taller than the viewport, so it can't spill
+   past its column into the disclaimer when results are few */
+.row > aside > .sticky-top {
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+/* Main content area always ends with clear space before the disclaimer */
+main.section-padding {
+  padding-bottom: 5rem !important;
+}
+main + aside.container,
+section + aside.container {
+  position: relative;
+  z-index: 1;
+  display: block;
+  margin-top: 2.5rem !important;
+  padding-top: 0;
+}
+main + aside.container .paw-disclaimer-box,
+section + aside.container .paw-disclaimer-box {
+  margin-top: 0 !important;
+}
+
 /* Body scroll lock when mobile menu or modal is open */
 body.scroll-locked {
   overflow: hidden !important;
@@ -237,6 +270,29 @@ body.scroll-locked {
     border-top: 1px solid var(--border-medium);
   }
 
+  /* Sidebar filters stack above content: disable sticky so the card
+     never floats over / overlaps the content cards or disclaimer */
+  .row > aside .sticky-top,
+  .row > aside .paw-card.sticky-top {
+    position: relative !important;
+    top: auto !important;
+    z-index: 1 !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+  .row > aside {
+    margin-bottom: 0.5rem;
+  }
+
+  /* Clear separation between page content and disclaimer box */
+  main + aside.container,
+  section + aside.container {
+    position: relative;
+    z-index: 1;
+    clear: both;
+    padding-top: 0.5rem;
+  }
+
   .floating-nutrition-badge {
     position: static;
     margin-top: 1rem;
@@ -252,6 +308,47 @@ body.scroll-locked {
 
 /* Mobile Devices (<= 767px) */
 @media (max-width: 767px) {
+  /* Before Footer Section Buttons: Stacked One-by-One, Equal Size on Mobile */
+  .before-footer-btns {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+    justify-content: center !important;
+    gap: 0.75rem !important;
+    width: 100%;
+    max-width: 340px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .before-footer-btns > a,
+  .before-footer-btns > button {
+    display: flex !important;
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 50px;
+    padding: 0.8rem 1rem !important;
+    font-size: 0.92rem !important;
+    text-align: center;
+    justify-content: center;
+    white-space: normal !important;
+    margin: 0 !important;
+  }
+
+  /* Disclaimer box: prevent horizontal overflow / overlapping on mobile */
+  .paw-disclaimer-box {
+    align-items: flex-start;
+    padding: 1rem 1.1rem;
+    gap: 0.75rem;
+    max-width: 100%;
+  }
+  .paw-disclaimer-box > div {
+    min-width: 0;
+    flex: 1 1 auto;
+    overflow-wrap: anywhere;
+  }
+
   /* Footer Section on Mobile View: 1*1 Stacked Alignment */
   .paw-footer .row > [class*="col-"] {
     flex: 0 0 100% !important;
@@ -373,27 +470,46 @@ body.scroll-locked {
     white-space: nowrap;
   }
 
-  /* Before Footer Section Buttons Equal Size on Mobile */
+  /* Before Footer Section Buttons: Stacked One-by-One, Equal Size on Mobile */
   .before-footer-btns,
   section.position-relative .d-flex.justify-content-center.flex-wrap.gap-3,
   .before-footer-cta .d-flex.justify-content-center.flex-wrap.gap-3 {
     display: flex !important;
-    flex-direction: row;
-    gap: 0.65rem !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.75rem !important;
     width: 100%;
+    max-width: 340px;
+    margin-left: auto;
+    margin-right: auto;
   }
   .before-footer-btns > a,
   .before-footer-btns > button,
   section.position-relative .d-flex.justify-content-center.flex-wrap.gap-3 > a,
   section.position-relative .d-flex.justify-content-center.flex-wrap.gap-3 > button,
   .before-footer-cta .d-flex.justify-content-center.flex-wrap.gap-3 > a {
-    flex: 1 1 0 !important;
-    min-width: 130px;
-    padding: 0.75rem 0.85rem !important;
-    font-size: 0.88rem !important;
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    min-width: 0;
+    min-height: 50px;
+    padding: 0.8rem 1rem !important;
+    font-size: 0.92rem !important;
     text-align: center;
     justify-content: center;
-    white-space: nowrap;
+    white-space: normal;
+  }
+
+  /* Disclaimer box: prevent horizontal overflow / overlapping on mobile */
+  .paw-disclaimer-box {
+    align-items: flex-start;
+    padding: 1rem 1.1rem;
+    gap: 0.75rem;
+    max-width: 100%;
+  }
+  .paw-disclaimer-box > div {
+    min-width: 0;
+    flex: 1 1 auto;
+    overflow-wrap: anywhere;
   }
 
   /* Footer Section on Mobile View: Menus aligned 1*1 */
